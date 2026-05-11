@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact · Nine Four Digital</title>
+<link rel="stylesheet" href="a94-styles.css" />
+<style>
+  .contact-section { background: var(--cream); }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: start;
+    margin-top: 2.4rem;
+  }
+
+  .contact-body p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1.4rem;
+    line-height: 1.9;
+  }
+
+  .contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .contact-option {
+    background: var(--white);
+    border: 1px solid rgba(13,27,42,0.08);
+    padding: 1.8rem 1.8rem;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .contact-option::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gold);
+  }
+  .contact-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 32px rgba(13,27,42,0.08);
+  }
+  .contact-option-type {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .contact-option-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .contact-option-desc {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ── FORM SIDE ── */
+  .contact-form-wrap {
+    background: var(--navy);
+    padding: 2.8rem 2.4rem;
+  }
+  .form-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+  }
+  .form-group { margin-bottom: 1.4rem; }
+  .form-label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 0.5rem;
+  }
+  .form-input,
+  .form-textarea,
+  .form-select {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-input:focus,
+  .form-textarea:focus,
+  .form-select:focus { border-color: var(--gold); }
+  .form-input::placeholder,
+  .form-textarea::placeholder { color: rgba(245,240,232,0.25); }
+  .form-textarea { resize: vertical; min-height: 120px; }
+  .form-select option { background: var(--navy); color: var(--cream); }
+
+  .form-note {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.35);
+    margin-top: 1.2rem;
+    line-height: 1.6;
+  }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--white); }
+  .faq-list { margin-top: 2.8rem; }
+  .faq-item {
+    border-bottom: 1px solid rgba(13,27,42,0.08);
+    padding: 1.6rem 0;
+  }
+  .faq-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+  .faq-a {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.75;
+    max-width: 680px;
+  }
+
+  @media (max-width: 768px) {
+    .contact-layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    Nine Four Digital
+    <span>Atelier Nine Four</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="shop.html">Browse the Shop</a></li>
+    <li><a href="coming.html">What's Coming</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Contact</div>
+  <h1>Get in<br/><em>touch</em>.</h1>
+  <p class="page-hero-sub">Questions about a product, a collaboration idea, or something else entirely — this is the place.</p>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="contact-layout">
+
+    <div>
+      <div class="section-label">Reach Out</div>
+      <p>The best way to reach Nine Four Digital is directly by email. Response times are typically within 48 hours.</p>
+      <p>For product questions, order issues, or custom requests — all of it lives in one inbox.</p>
+
+      <div class="contact-options">
+        <a class="contact-option" href="mailto:jenny@atelierninefour.com">
+          <div class="contact-option-type">Email</div>
+          <div class="contact-option-value">jenny@atelierninefour.com</div>
+          <div class="contact-option-desc">For product questions, order support, collaborations, and everything else.</div>
+        </a>
+        <a class="contact-option" href="https://www.etsy.com" target="_blank" rel="noopener">
+          <!-- Replace with actual Etsy URL -->
+          <div class="contact-option-type">Etsy Messages</div>
+          <div class="contact-option-value">Message via Etsy</div>
+          <div class="contact-option-desc">Purchased on Etsy? Message directly through the platform for the fastest resolution.</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <div class="form-heading">Send a Message</div>
+      <div class="form-group">
+        <label class="form-label" for="name">Name</label>
+        <input class="form-input" type="text" id="name" placeholder="Your name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" placeholder="your@email.com" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="reason">What's this about?</label>
+        <select class="form-select" id="reason">
+          <option value="" disabled selected>Select a reason</option>
+          <option>Product question</option>
+          <option>Order or download issue</option>
+          <option>Custom or bulk request</option>
+          <option>Collaboration or partnership</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" placeholder="What's on your mind?"></textarea>
+      </div>
+      <a href="mailto:jenny@atelierninefour.com" class="btn-primary" style="width:100%; text-align:center; display:block;">Send via Email</a>
+      <p class="form-note">This form will open your email client. Alternatively, email jenny@atelierninefour.com directly.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-label">Common Questions</div>
+  <h2 class="section-heading">Before you<br/><em>reach out</em>.</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">How do I receive my download after purchase?</div>
+      <div class="faq-a">All products are instant digital downloads. After purchase, you'll receive a download link from the platform (Etsy, Payhip, or Gumroad) immediately. Check your spam folder if it doesn't arrive within a few minutes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What formats do the templates come in?</div>
+      <div class="faq-a">Most templates come in both Microsoft Word (.docx) and Google Docs format. Budget trackers are available in Excel and Google Sheets. Each listing specifies exactly what's included.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I request a custom template for my profession?</div>
+      <div class="faq-a">Yes. Send an email with your profession, the type of product you need, and any specific requirements. Custom requests are reviewed on a case-by-case basis.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are the resume templates really ATS-verified?</div>
+      <div class="faq-a">Yes. Every resume template in the catalog has been tested for ATS compatibility. The structure, formatting, and keyword fields are all built with automated screening systems in mind.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you offer refunds?</div>
+      <div class="faq-a">Due to the digital nature of all products, refunds are not standard. If there is an issue with your download or a product is not as described, reach out directly — it will be resolved.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="wordmark">Atelier Nine Four</div>
+      <div class="tagline">Multifaceted by Design</div>
+      <p>A creative studio built at the intersection of systems, culture, and modern professional life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="https://www.etsy.com" target="_blank">Etsy</a></li>
+        <li><a href="https://payhip.com" target="_blank">Payhip</a></li>
+        <li><a href="https://gumroad.com" target="_blank">Gumroad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="coming.html">What's Coming</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Atelier Nine Four · jenny@atelierninefour.com · All rights reserved.</p>
+    <div class="a94">A94</div>
+  </div>
+</footer>
+
+</body>
+</html>

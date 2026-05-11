@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Browse the Shop · Nine Four Digital</title>
+<link rel="stylesheet" href="a94-styles.css" />
+<style>
+  /* ── PLATFORM CARDS ── */
+  .platforms-section { background: var(--cream); }
+
+  .platform-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .platform-card {
+    background: var(--white);
+    border: 1px solid rgba(13,27,42,0.1);
+    padding: 2.6rem 2.2rem;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .platform-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--dg-green);
+  }
+  .platform-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(13,27,42,0.1);
+  }
+  .platform-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--dg-green);
+    margin-bottom: 1rem;
+  }
+  .platform-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+    line-height: 1.1;
+  }
+  .platform-desc {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .platform-what {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+  .platform-items {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  .platform-items li {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--gray);
+    padding: 0.35rem 0;
+    padding-left: 1rem;
+    position: relative;
+    border-bottom: 1px solid rgba(13,27,42,0.04);
+  }
+  .platform-items li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+  .platform-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .platform-link::after { content: '→'; transition: transform 0.2s; }
+  .platform-card:hover .platform-link::after { transform: translateX(4px); }
+
+  /* ── ALL PRODUCTS ── */
+  .all-products-section { background: var(--white); }
+
+  .products-table {
+    margin-top: 3rem;
+    border: 1px solid rgba(13,27,42,0.08);
+    overflow: hidden;
+  }
+  .products-table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    background: var(--navy);
+    padding: 1rem 1.6rem;
+    gap: 1rem;
+  }
+  .products-table-header span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.75);
+  }
+  .product-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    padding: 1.2rem 1.6rem;
+    gap: 1rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(13,27,42,0.06);
+    transition: background 0.15s;
+  }
+  .product-row:last-child { border-bottom: none; }
+  .product-row:hover { background: var(--cream); }
+  .product-row-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: var(--navy);
+  }
+  .product-row-sub {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-top: 0.15rem;
+  }
+  .product-row-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--dg-green);
+  }
+  .product-row-format {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--gray);
+  }
+  .product-row-platforms {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .p-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    background: rgba(27,107,74,0.1);
+    color: var(--dg-green);
+  }
+
+  @media (max-width: 768px) {
+    .products-table-header { display: none; }
+    .product-row {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    Nine Four Digital
+    <span>Atelier Nine Four</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="shop.html" class="active">Browse the Shop</a></li>
+    <li><a href="coming.html">What's Coming</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Browse the Shop</div>
+  <h1>Find what you<br/><em>actually need</em>.</h1>
+  <p class="page-hero-sub">Every product is an instant download. Profession-specific. ATS-verified. Available across three platforms.</p>
+</div>
+
+<!-- PLATFORMS -->
+<section class="platforms-section">
+  <div class="section-label">Where to Shop</div>
+  <h2 class="section-heading">Three platforms.<br/><em>One catalog.</em></h2>
+
+  <div class="platform-cards">
+
+    <a class="platform-card" href="https://www.etsy.com" target="_blank" rel="noopener">
+      <!-- Replace with your actual Etsy URL -->
+      <div class="platform-badge">Etsy</div>
+      <div class="platform-name">AtelierNineFour<br/>on Etsy</div>
+      <div class="platform-desc">The best place to start. Strong search discovery, buyer protections, and instant download on everything.</div>
+      <div class="platform-what">Best for</div>
+      <ul class="platform-items">
+        <li>Resume templates</li>
+        <li>Cover letter bundles</li>
+        <li>Budget trackers</li>
+        <li>Canva kits</li>
+      </ul>
+      <div class="platform-link">Shop on Etsy</div>
+    </a>
+
+    <a class="platform-card" href="https://payhip.com" target="_blank" rel="noopener">
+      <!-- Replace with your actual Payhip URL -->
+      <div class="platform-badge">Payhip</div>
+      <div class="platform-name">Nine Four Digital<br/>on Payhip</div>
+      <div class="platform-desc">Direct checkout, lower fees passed on to you. Ideal for niche profession-specific tools.</div>
+      <div class="platform-what">Best for</div>
+      <ul class="platform-items">
+        <li>Nurse & teacher templates</li>
+        <li>Niche budget trackers</li>
+        <li>Direct purchase without a marketplace</li>
+      </ul>
+      <div class="platform-link">Shop on Payhip</div>
+    </a>
+
+    <a class="platform-card" href="https://gumroad.com" target="_blank" rel="noopener">
+      <!-- Replace with your actual Gumroad URL -->
+      <div class="platform-badge">Gumroad</div>
+      <div class="platform-name">Nine Four Digital<br/>on Gumroad</div>
+      <div class="platform-desc">For the professional who needs the full system. Premium kits and bundles built for serious use.</div>
+      <div class="platform-what">Best for</div>
+      <ul class="platform-items">
+        <li>ATS Toolkit</li>
+        <li>LinkedIn Optimization Kit</li>
+        <li>ERG & operational systems</li>
+        <li>Bundles & premium kits</li>
+      </ul>
+      <div class="platform-link">Shop on Gumroad</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- FULL PRODUCT LIST -->
+<section class="all-products-section">
+  <div class="section-label">Full Catalog</div>
+  <h2 class="section-heading">Everything<br/>in the <em>catalog</em>.</h2>
+
+  <!-- BUNDLES -->
+  <div style="margin-top: 3rem; margin-bottom: 0.5rem;">
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;">Bundles — Best Value</div>
+  </div>
+  <div class="products-table">
+    <div class="products-table-header" style="background: var(--gold);">
+      <span style="color: var(--navy);">Bundle</span>
+      <span style="color: var(--navy);">Price</span>
+      <span style="color: var(--navy);">Includes</span>
+      <span style="color: var(--navy);">Available On</span>
+    </div>
+
+    <div class="product-row">
+      <div><div class="product-row-name">Mini Starter Pack</div><div class="product-row-sub">1 resume + matching cover letter — same profession. Available for all 8 Wave 1 roles.</div></div>
+      <div class="product-row-price">$19.94</div>
+      <div class="product-row-format">Word + Google Docs</div>
+      <div class="product-row-platforms"><span class="p-tag">Etsy</span><span class="p-tag">Payhip</span></div>
+    </div>
+
+    <div class="product-row">
+      <div><div class="product-row-name">Cover Letter Bundle</div><div class="product-row-sub">All 5 original profession cover letters in one download</div></div>
+      <div class="product-row-price">$23.47</div>
+      <div class="product-row-format">Word + Google Docs</div>
+      <div class="product-row-platforms"><span class="p-tag">Etsy</span><span class="p-tag">Payhip</span></div>
+    </div>
+
+    <div class="product-row">
+      <div><div class="product-row-name">Career Starter Bundle</div><div class="product-row-sub">Resume template + matching cover letter + ATS Toolkit</div></div>
+      <div class="product-row-price">$35.97</div>
+      <div class="product-row-format">Word + PDF + Google Docs</div>
+      <div class="product-row-platforms"><span class="p-tag">Etsy</span><span class="p-tag">Payhip</span></div>
+    </div>
+
+    <div class="product-row">
+      <div><div class="product-row-name">Full Professional System</div><div class="product-row-sub">Resume + cover letter + ATS Toolkit + LinkedIn Optimization Kit</div></div>
+      <div class="product-row-price">$52.94</div>
+      <div class="product-row-format">Word + PDF + Google Docs</div>
+      <div class="product-row-platforms"><span class="p-tag">Gumroad</span></div>
+    </div>
+
+  </div>
+
+  <!-- INDIVIDUAL PRODUCTS -->
+  <div style="margin-top: 2.8rem; margin-bottom: 0.5rem;">
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dg-green); margin-bottom: 1rem;">Individual Products</div>
+  </div>
+  <div class="products-table">
+    <div class="products-table-header">
+      <span>Product</span>
+      <span>Price</span>
+      <span>Format</span>
+      <span>Available On</span>
+    </div>
+
+    <div class="product-row">
+      <div><div class="product-row-name">Resume Templates</div><div class="product-row-sub">EA · Registered Nurse · Teacher · HR · Marketing Manager · Software Engineer · Social Worker · Customer Success</div></div>
+      <div class="product-row-price">$14.97</div>
+      <div class="product-row-format">Word + Google Docs</div>
+      <div class="product-row-platforms"><span class="p-tag">Etsy</span><span class="p-tag">Payhip</span></div>
+    </div>
+
+    <div class="product-row">
+      <div><div class="product-row-name">Cover Letters</div><div class="product-row-sub">EA · Marketing · Tech · Nursing · Project Manager · HR · Social Worker · Customer Success · Teacher</div></div>
+      <div class="product-row-price">$9.47</div>
+      <div class="product-row-format">Word + Google Docs</div>
+      <div class="product-row-platforms"><span class="p-tag">Etsy</span><span class="p-tag">Payhip</span></div>
+    </div>
+
+    <div class="product-row">
+      <div><div class="product-row-name">ATS Toolkit</div><div class="product-row-sub">Checker + keyword rewrite system + per-application worksheet</div></div>
+      <div class="product-row-price">$28.00</div>
+      <div class="product-row-format">PDF</div>
+      <div class="product-row-platforms"><span class="p-tag">Gumroad</span></div>
+    </div>
+
+    <div class="product-row">
+      <div><div class="product-row-name">LinkedIn Optimization Kit</div><div class="product-row-sub">Full profile audit, rewrite system, headline examples, and worksheet</div></div>
+      <div class="product-row-price">$22.00</div>
+      <div class="product-row-format">PDF</div>
+      <div class="product-row-platforms"><span class="p-tag">Gumroad</span></div>
+    </div>
+
+    <div class="product-row">
+      <div><div class="product-row-name">Budget Trackers</div><div class="product-row-sub">Monthly Planner · Debt Payoff · Debt Waterfall · Savings Goals · Bill Tracker · Annual Overview · Net Worth</div></div>
+      <div class="product-row-price">$9.47 – $14.97</div>
+      <div class="product-row-format">Excel + Google Sheets</div>
+      <div class="product-row-platforms"><span class="p-tag">Etsy</span><span class="p-tag">Payhip</span><span class="p-tag">Gumroad</span></div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="wordmark">Atelier Nine Four</div>
+      <div class="tagline">Multifaceted by Design</div>
+      <p>A creative studio built at the intersection of systems, culture, and modern professional life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="https://www.etsy.com" target="_blank">Etsy</a></li>
+        <li><a href="https://payhip.com" target="_blank">Payhip</a></li>
+        <li><a href="https://gumroad.com" target="_blank">Gumroad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="coming.html">What's Coming</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Atelier Nine Four · jenny@atelierninefour.com · All rights reserved.</p>
+    <div class="a94">A94</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About · Nine Four Digital</title>
+<link rel="stylesheet" href="a94-styles.css" />
+<style>
+  .about-main { background: var(--cream); }
+
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 6vw;
+    align-items: start;
+    margin-top: 2.4rem;
+  }
+
+  .about-body p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1.6rem;
+    line-height: 1.9;
+  }
+  .about-body p strong { font-weight: 600; color: var(--navy); }
+
+  .about-sidebar {
+    background: var(--navy);
+    padding: 2.4rem 2rem;
+    position: sticky;
+    top: 88px;
+  }
+  .sidebar-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.6rem;
+  }
+  .sidebar-list { list-style: none; }
+  .sidebar-list li {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.72);
+    padding: 0.75rem 0 0.75rem 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    line-height: 1.5;
+    position: relative;
+  }
+  .sidebar-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    font-size: 0.45rem;
+    top: 1rem;
+    color: var(--gold);
+  }
+  .sidebar-list li:last-child { border-bottom: none; }
+
+  /* ── VALUES BAND ── */
+  .values-band {
+    background: var(--white);
+    padding: 80px 5vw;
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .value-item {}
+  .value-line {
+    width: 28px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .value-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .value-desc {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .about-layout { grid-template-columns: 1fr; }
+    .about-sidebar { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    Nine Four Digital
+    <span>Atelier Nine Four</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="shop.html">Browse the Shop</a></li>
+    <li><a href="coming.html">What's Coming</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-eyebrow">About</div>
+  <h1>The studio<br/>behind the <em>work</em>.</h1>
+  <p class="page-hero-sub">Atelier Nine Four is a creative house built by someone who has spent two decades at the intersection of professional operations, community, and culture.</p>
+</div>
+
+<!-- ABOUT BODY -->
+<section class="about-main">
+  <div class="about-layout">
+    <div class="about-body">
+      <div class="section-label">Who Built This</div>
+      <p>Atelier Nine Four was built by someone who has spent more than two decades working across corporate environments, cultural spaces, and community organizations. Not observing them. Operating inside them.</p>
+      <p>That distinction matters. The products in this catalog were not designed by studying the market. They were designed by someone who understands, from the inside, what professionals actually need — and what most of what's out there fails to deliver.</p>
+      <p>Nine Four Digital is the first public chapter of the studio. The tools here — career templates, financial systems, operational resources — exist because the gap between what's available and what's actually useful is real. And it disproportionately affects the people who can least afford it.</p>
+      <p><strong>This studio was built for those people. That has never changed.</strong></p>
+
+      <div class="section-label" style="margin-top: 2.8rem;">The Approach</div>
+      <p>Everything in this catalog is profession-specific. Generic templates exist everywhere. Nine Four Digital does not compete on price or volume — it competes on precision. A resume template built for an Executive Assistant is not the same as one built for a Project Manager. The ATS keywords are different. The structure is different. The language is different.</p>
+      <p>That level of specificity takes longer to build. It is worth it.</p>
+    </div>
+
+    <div class="about-sidebar">
+      <div class="sidebar-heading">What this studio is built on</div>
+      <ul class="sidebar-list">
+        <li>20+ years across professional operations and community work</li>
+        <li>Grounded in real workplace environments — not research</li>
+        <li>Built for people who are underserved by what already exists</li>
+        <li>A background spanning corporate, culture, and community</li>
+        <li>Precision in every product — nothing here is accidental</li>
+        <li>Designed to evolve over the next decade</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-band">
+  <div class="section-label">The Work Ethic</div>
+  <h2 class="section-heading">What guides<br/>every <em>decision</em>.</h2>
+  <div class="values-grid">
+    <div class="value-item">
+      <div class="value-line"></div>
+      <div class="value-name">Specificity</div>
+      <div class="value-desc">Vague tools produce vague results. Every product here is built for a real profession, a real situation, a real person.</div>
+    </div>
+    <div class="value-item">
+      <div class="value-line"></div>
+      <div class="value-name">Integrity</div>
+      <div class="value-desc">Nothing in this catalog makes a claim that isn't defensible. No filler. No inflated language.</div>
+    </div>
+    <div class="value-item">
+      <div class="value-line"></div>
+      <div class="value-name">Access</div>
+      <div class="value-desc">Premium tools at prices built for real people — not just people who can already afford to pay for an edge.</div>
+    </div>
+    <div class="value-item">
+      <div class="value-line"></div>
+      <div class="value-name">Longevity</div>
+      <div class="value-desc">This is not a trend play. Every product is built to remain relevant and useful — not just for this quarter.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="wordmark">Atelier Nine Four</div>
+      <div class="tagline">Multifaceted by Design</div>
+      <p>A creative studio built at the intersection of systems, culture, and modern professional life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="https://www.etsy.com" target="_blank">Etsy</a></li>
+        <li><a href="https://payhip.com" target="_blank">Payhip</a></li>
+        <li><a href="https://gumroad.com" target="_blank">Gumroad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="coming.html">What's Coming</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Atelier Nine Four · jenny@atelierninefour.com · All rights reserved.</p>
+    <div class="a94">A94</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nine Four Digital · Atelier Nine Four</title>
+<link rel="stylesheet" href="a94-styles.css" />
+<style>
+  /* ── HOME HERO ── */
+  .hero {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 96px 5vw 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 520px; height: 520px;
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 40px; right: -20px;
+    width: 360px; height: 360px;
+    border: 1px solid rgba(201,168,76,0.08);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--dg-green);
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--dg-green);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 1.8rem;
+    max-width: 680px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: rgba(245,240,232,0.7);
+    max-width: 500px;
+    margin-bottom: 2.8rem;
+    line-height: 1.8;
+  }
+  .hero-cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-mark {
+    position: absolute;
+    right: 5vw; bottom: 60px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 10rem;
+    color: rgba(201,168,76,0.06);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.04em;
+  }
+
+  /* ── INTRO STRIP ── */
+  .intro-strip {
+    background: var(--white);
+    padding: 64px 5vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3vw;
+    border-bottom: 1px solid rgba(13,27,42,0.06);
+  }
+  .intro-item { padding: 0 1rem; }
+  .intro-item:not(:last-child) { border-right: 1px solid rgba(13,27,42,0.08); }
+  .intro-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .intro-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .intro-desc {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.65;
+  }
+
+  /* ── PRODUCT PREVIEW ── */
+  .products-section { background: var(--cream); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+  .product-pill {
+    background: var(--white);
+    border: 1px solid rgba(13,27,42,0.08);
+    padding: 1.8rem 1.6rem;
+  }
+  .product-pill-icon { font-size: 1.3rem; margin-bottom: 0.8rem; }
+  .product-pill-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .product-pill-range {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--dg-green);
+    margin-bottom: 0.5rem;
+  }
+  .product-pill-desc {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: var(--navy);
+    padding: 80px 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .cta-band-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+  .cta-band-text h2 em { font-style: italic; color: var(--gold); }
+  .cta-band-text p {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.6);
+  }
+
+  @media (max-width: 768px) {
+    .intro-strip { grid-template-columns: 1fr; }
+    .intro-item { border-right: none !important; border-bottom: 1px solid rgba(13,27,42,0.08); padding: 1.2rem 0; }
+    .hero-mark { display: none; }
+    .cta-band { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    Nine Four Digital
+    <span>Atelier Nine Four</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="shop.html">Browse the Shop</a></li>
+    <li><a href="coming.html">What's Coming</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">Nine Four Digital</div>
+    <h1>Real tools for people<br/>who <em>actually work</em>.</h1>
+    <p class="hero-sub">Premium career templates and financial planning tools. Profession-specific. ATS-verified. Built with real professional experience behind every product.</p>
+    <div class="hero-cta-group">
+      <a href="shop.html" class="btn-primary">Browse the Shop</a>
+      <a href="story.html" class="btn-secondary">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-mark" aria-hidden="true">9✦4</div>
+</section>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip">
+  <div class="intro-item">
+    <div class="intro-num">20+</div>
+    <div class="intro-label">Years of Experience</div>
+    <div class="intro-desc">Every product is grounded in real professional experience — not research, not guesswork.</div>
+  </div>
+  <div class="intro-item">
+    <div class="intro-num">ATS</div>
+    <div class="intro-label">Verified Templates</div>
+    <div class="intro-desc">Built to pass the systems that filter candidates out before a human ever reads their name.</div>
+  </div>
+  <div class="intro-item">
+    <div class="intro-num">A94</div>
+    <div class="intro-label">A Studio, Not a Shop</div>
+    <div class="intro-desc">Nine Four Digital is one part of a larger creative house. Precision in every product.</div>
+  </div>
+</div>
+
+<!-- PRODUCTS PREVIEW -->
+<section class="products-section">
+  <div class="section-label">What We Make</div>
+  <h2 class="section-heading">Profession-specific.<br/>ATS-verified. <em>Actually useful.</em></h2>
+  <div class="products-grid">
+    <div class="product-pill">
+      <div class="product-pill-icon">📄</div>
+      <div class="product-pill-name">Resume Templates</div>
+      <div class="product-pill-range">$14 – $20</div>
+      <div class="product-pill-desc">EA, Marketing, Tech, Nursing, Project Management. Word + Google Docs.</div>
+    </div>
+    <div class="product-pill">
+      <div class="product-pill-icon">✉️</div>
+      <div class="product-pill-name">Cover Letter Bundles</div>
+      <div class="product-pill-range">$15</div>
+      <div class="product-pill-desc">5-profession bundle. Matching templates. Write once, adapt for any application.</div>
+    </div>
+    <div class="product-pill">
+      <div class="product-pill-icon">🎯</div>
+      <div class="product-pill-name">ATS Toolkit</div>
+      <div class="product-pill-range">$28</div>
+      <div class="product-pill-desc">Checker + keyword rewrite system. Stop being filtered out before anyone reads your name.</div>
+    </div>
+    <div class="product-pill">
+      <div class="product-pill-icon">💰</div>
+      <div class="product-pill-name">Budget Trackers</div>
+      <div class="product-pill-range">$10 – $25</div>
+      <div class="product-pill-desc">Debt payoff, monthly planning, savings goals. Real finance tools for real people.</div>
+    </div>
+    <div class="product-pill">
+      <div class="product-pill-icon">💼</div>
+      <div class="product-pill-name">LinkedIn Kit</div>
+      <div class="product-pill-range">$22</div>
+      <div class="product-pill-desc">Full profile rewrite system. Built on real knowledge of what senior-level presence looks like.</div>
+    </div>
+    <div class="product-pill">
+      <div class="product-pill-icon">⚙️</div>
+      <div class="product-pill-name">Operational Systems</div>
+      <div class="product-pill-range">$18 – $45</div>
+      <div class="product-pill-desc">AI workflow tools, ERG planning systems, Canva kits. Infrastructure, not inspiration.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-text">
+    <h2>Ready to find<br/>what you <em>need</em>?</h2>
+    <p>Shop directly on Etsy, Payhip, or Gumroad — instant download on every product.</p>
+  </div>
+  <a href="shop.html" class="btn-primary">Browse the Shop</a>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="wordmark">Atelier Nine Four</div>
+      <div class="tagline">Multifaceted by Design</div>
+      <p>A creative studio built at the intersection of systems, culture, and modern professional life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="https://www.etsy.com" target="_blank">Etsy</a></li>
+        <li><a href="https://payhip.com" target="_blank">Payhip</a></li>
+        <li><a href="https://gumroad.com" target="_blank">Gumroad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="coming.html">What's Coming</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Atelier Nine Four · jenny@atelierninefour.com · All rights reserved.</p>
+    <div class="a94">A94</div>
+  </div>
+</footer>
+
+</body>
+</html>

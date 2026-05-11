@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What's Coming · Nine Four Digital</title>
+<link rel="stylesheet" href="a94-styles.css" />
+<style>
+  .chapters-section { background: var(--navy); }
+
+  .chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .chapter-card {
+    border: 1px solid rgba(201,168,76,0.12);
+    padding: 2.2rem 2rem;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .chapter-card.active {
+    border-color: var(--gold);
+  }
+  .chapter-card:hover { border-color: rgba(201,168,76,0.35); }
+
+  .chapter-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.56rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 1.4rem;
+    display: inline-block;
+  }
+  .chapter-badge.live { background: var(--dg-green); color: var(--white); }
+  .chapter-badge.next { background: rgba(201,168,76,0.12); color: var(--gold); }
+  .chapter-badge.later { background: rgba(255,255,255,0.04); color: rgba(245,240,232,0.35); }
+
+  .chapter-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.45);
+    margin-bottom: 0.4rem;
+  }
+  .chapter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+  .chapter-desc {
+    font-size: 0.83rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.75;
+  }
+
+  /* ── CLOSING STATEMENT ── */
+  .closing-section { background: var(--cream); }
+
+  .closing-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: center;
+  }
+
+  .closing-body p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.9;
+    margin-bottom: 1.4rem;
+  }
+  .closing-body p strong { font-weight: 600; color: var(--navy); }
+
+  .closing-pull {
+    border-left: 2px solid var(--gold);
+    padding: 2rem 2rem 2rem 2.2rem;
+  }
+  .closing-pull p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.45;
+    font-style: italic;
+    color: var(--navy);
+  }
+
+  /* ── NOTIFY ── */
+  .notify-band {
+    background: var(--white);
+    padding: 72px 5vw;
+    text-align: center;
+    border-top: 1px solid rgba(13,27,42,0.06);
+  }
+  .notify-band h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+  }
+  .notify-band h2 em { font-style: italic; color: var(--dark-gold); }
+  .notify-band p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .closing-layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    Nine Four Digital
+    <span>Atelier Nine Four</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="shop.html">Browse the Shop</a></li>
+    <li><a href="coming.html" class="active">What's Coming</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-eyebrow">What's Coming</div>
+  <h1>This is<br/>chapter <em>one</em>.</h1>
+  <p class="page-hero-sub">Atelier Nine Four is a studio built to contain multitudes. The rest is being written.</p>
+</div>
+
+<!-- CHAPTERS -->
+<section class="chapters-section">
+  <div class="section-label gold">The Studio Roadmap</div>
+  <h2 class="section-heading light">The chapters<br/><em>ahead</em>.</h2>
+
+  <div class="chapters-grid">
+
+    <div class="chapter-card active">
+      <div class="chapter-badge live">Live Now</div>
+      <div class="chapter-num">Chapter One</div>
+      <div class="chapter-title">Nine Four Digital</div>
+      <div class="chapter-desc">Career templates, financial planning tools, and operational systems. Profession-specific. ATS-verified. Built for real professionals.</div>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-badge next">In the Works</div>
+      <div class="chapter-num">Chapter Two</div>
+      <div class="chapter-title">Something you can hold.</div>
+      <div class="chapter-desc">Something you can wear. Something that says what you mean without having to explain it.</div>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-badge next">In the Works</div>
+      <div class="chapter-num">Chapter Three</div>
+      <div class="chapter-title">Something to read.</div>
+      <div class="chapter-desc">Something to listen to. The studio finds its editorial voice — built to inform, not just sell.</div>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-badge next">In the Works</div>
+      <div class="chapter-num">Chapter Four</div>
+      <div class="chapter-title">Something that gives back.</div>
+      <div class="chapter-desc">The work the studio was always going to do — when the time is right and the infrastructure is ready.</div>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-badge later">On the Horizon</div>
+      <div class="chapter-num">Chapter Five</div>
+      <div class="chapter-title">Something that teaches.</div>
+      <div class="chapter-desc">The knowledge behind every product — eventually made available in a different, more direct form.</div>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-badge later">On the Horizon</div>
+      <div class="chapter-num">Chapter Six ✦</div>
+      <div class="chapter-title">The studio is built to contain multitudes.</div>
+      <div class="chapter-desc">There is more. There has always been more.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLOSING STATEMENT -->
+<section class="closing-section">
+  <div class="closing-layout">
+    <div class="closing-body">
+      <div class="section-label">The Long Game</div>
+      <p>Atelier Nine Four is not a sprint. It is a studio designed to evolve over the next decade — deliberately, at the right pace, without cutting corners to move faster.</p>
+      <p>Each chapter opens when it is ready. Not before. <strong>That discipline is the whole point.</strong></p>
+    </div>
+    <div class="closing-pull">
+      <p>"Each sub-brand has its own lane, its own voice, and its own reason to exist."</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOTIFY -->
+<div class="notify-band">
+  <h2>Want to know when<br/>the next chapter <em>opens</em>?</h2>
+  <p>Get in touch and we'll make sure you hear about it first.</p>
+  <a href="contact.html" class="btn-primary">Get in Touch</a>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="wordmark">Atelier Nine Four</div>
+      <div class="tagline">Multifaceted by Design</div>
+      <p>A creative studio built at the intersection of systems, culture, and modern professional life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="https://www.etsy.com" target="_blank">Etsy</a></li>
+        <li><a href="https://payhip.com" target="_blank">Payhip</a></li>
+        <li><a href="https://gumroad.com" target="_blank">Gumroad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="coming.html">What's Coming</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Atelier Nine Four · jenny@atelierninefour.com · All rights reserved.</p>
+    <div class="a94">A94</div>
+  </div>
+</footer>
+
+</body>
+</html>

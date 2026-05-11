@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Story · Nine Four Digital</title>
+<link rel="stylesheet" href="a94-styles.css" />
+<style>
+  .story-body-section { background: var(--cream); }
+
+  .story-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 6vw;
+    align-items: start;
+    margin-top: 2.4rem;
+  }
+
+  .story-body p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1.6rem;
+    line-height: 1.9;
+  }
+  .story-body p strong { font-weight: 600; color: var(--navy); }
+
+  .story-pull {
+    border-left: 2px solid var(--gold);
+    padding: 1.8rem 2rem 1.8rem 2.2rem;
+    margin: 2rem 0;
+  }
+  .story-pull p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--navy);
+    margin: 0 !important;
+  }
+  .story-pull cite {
+    display: block;
+    margin-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray);
+    font-style: normal;
+  }
+
+  .story-sidebar {
+    position: sticky;
+    top: 88px;
+  }
+
+  .stat-stack { display: flex; flex-direction: column; gap: 1.2rem; }
+  .stat-box {
+    background: var(--navy);
+    padding: 1.8rem 1.6rem;
+  }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2.6rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.4;
+  }
+
+  /* ── PRINCIPLES ── */
+  .principles-section { background: var(--navy); }
+
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .principle-card {
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 2rem 1.8rem;
+  }
+  .principle-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    line-height: 1;
+  }
+  .principle-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+  }
+  .principle-desc {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .story-layout { grid-template-columns: 1fr; }
+    .story-sidebar { position: static; }
+    .stat-stack { flex-direction: row; flex-wrap: wrap; }
+    .stat-box { flex: 1; min-width: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    Nine Four Digital
+    <span>Atelier Nine Four</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="story.html" class="active">Our Story</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="shop.html">Browse the Shop</a></li>
+    <li><a href="coming.html">What's Coming</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Our Story</div>
+  <h1>Built with intention.<br/><em>Not by accident.</em></h1>
+  <p class="page-hero-sub">Atelier Nine Four is a creative studio built to contain multitudes. Nine Four Digital is where it begins.</p>
+</div>
+
+<!-- STORY BODY -->
+<section class="story-body-section">
+  <div class="story-layout">
+    <div class="story-body">
+      <div class="section-label">Where It Comes From</div>
+      <p>Atelier Nine Four did not begin with a launch strategy. It began with a conviction: that one person can build many things simultaneously, as long as each thing has its own lane, its own voice, and its own reason to exist.</p>
+      <p>The work behind this studio spans more than two decades — across corporate environments, cultural institutions, and community spaces. That range of experience is not incidental. It is the entire point. Every product in this catalog was designed with real professional environments in mind, by someone who has operated inside them.</p>
+
+      <div class="story-pull">
+        <p>"Not a template factory. A studio run by someone who actually uses these tools."</p>
+        <cite>— Atelier Nine Four</cite>
+      </div>
+
+      <p>Nine Four Digital is the first public expression of the studio. Career tools and financial systems — profession-specific, ATS-verified, and priced for real people. Not for people with unlimited budgets or unlimited time. For the career changer, the first-generation professional, the person doing more than their title reflects.</p>
+      <p><strong>These tools were built with that person in mind. That has always been the intention.</strong></p>
+
+      <div class="section-label" style="margin-top: 3rem;">The Name</div>
+      <p><strong>Atelier</strong> — a working creative studio. A space where craft is practiced seriously, over time, with intention. Not a hobby. Not a side hustle. A studio.</p>
+      <p><strong>Nine Four</strong> — a personal signature embedded in the brand name. A signal that this is not corporate, not generic, not manufactured. It is built by a specific person, rooted in a specific life.</p>
+      <p>Together: a creative studio that is unmistakably personal.</p>
+    </div>
+
+    <div class="story-sidebar">
+      <div class="stat-stack">
+        <div class="stat-box">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Years of professional experience behind every product</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">2026</div>
+          <div class="stat-label">The year the studio opens its doors</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">ATS</div>
+          <div class="stat-label">Verified on every career template in the catalog</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">A94</div>
+          <div class="stat-label">One studio. Many chapters. This is chapter one.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="principles-section">
+  <div class="section-label gold">What This Studio Stands For</div>
+  <h2 class="section-heading light">Five principles.<br/><em>Non-negotiable.</em></h2>
+  <div class="principles-grid">
+    <div class="principle-card">
+      <div class="principle-mark">✦</div>
+      <div class="principle-name">Authenticity Over Aesthetics</div>
+      <div class="principle-desc">Every product is grounded in real professional experience. Nothing in this catalog is decorative.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-mark">✦</div>
+      <div class="principle-name">Systems Thinking</div>
+      <div class="principle-desc">The studio is designed as an ecosystem. Each part serves a purpose. Nothing is accidental.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-mark">✦</div>
+      <div class="principle-name">Precision</div>
+      <div class="principle-desc">Typography, spacing, copy, structure — every detail is deliberate. That is the standard.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-mark">✦</div>
+      <div class="principle-name">Community</div>
+      <div class="principle-desc">This work serves people who have been undercounted by the systems they operate in.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-mark">✦</div>
+      <div class="principle-name">Longevity</div>
+      <div class="principle-desc">This is not a trend brand. It is built to evolve — designed with the next decade in mind.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="wordmark">Atelier Nine Four</div>
+      <div class="tagline">Multifaceted by Design</div>
+      <p>A creative studio built at the intersection of systems, culture, and modern professional life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="https://www.etsy.com" target="_blank">Etsy</a></li>
+        <li><a href="https://payhip.com" target="_blank">Payhip</a></li>
+        <li><a href="https://gumroad.com" target="_blank">Gumroad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="coming.html">What's Coming</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Atelier Nine Four · jenny@atelierninefour.com · All rights reserved.</p>
+    <div class="a94">A94</div>
+  </div>
+</footer>
+
+</body>
+</html>
