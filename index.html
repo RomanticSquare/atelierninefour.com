@@ -656,6 +656,34 @@ footer {
   </div>
   <div class="footer-right">Multifaceted by Design</div>
 </footer>
+<script>
+  // Section tracking for single-page site
+  const sections = [
+    { id: 'home',       name: 'Home' },
+    { id: 'about',      name: 'About' },
+    { id: 'products',   name: 'Products' },
+    { id: 'newsletter', name: 'Newsletter' },
+    { id: 'contact',    name: 'Contact' },
+  ];
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        gtag('event', 'section_view', {
+          section_name: entry.target.dataset.section,
+          page_location: window.location.href
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => {
+    const el = document.getElementById(s.id);
+    if (el) {
+      el.dataset.section = s.name;
+      observer.observe(el);
+    }
+  });
+</script>
 </body>
 </html>
