@@ -287,7 +287,7 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
         <div class="ti"><span class="ck">✓</span>Financial aid sequencing notes</div>
         <div class="ti"><span class="ck">✓</span>Written roadmap PDF — personalized, within 72 hours</div>
       </div>
-      <div class="tc-ftr"><a href="mailto:jenny@atelierninefour.com?subject=Blueprint Tier 1 — $145 Launch" class="tc-cta">Book Blueprint — $145 Launch Rate</a></div>
+      <div class="tc-ftr"><a href="mailto:jenny@atelierninefour.com?subject=Blueprint Tier 1 — $145 Launch" class="tc-cta" data-launch-label="Book Blueprint — $145 Launch Rate" data-standard-label="Book Blueprint — $175 Standard Rate" data-launch-subject="Blueprint Tier 1 — $145 Launch" data-standard-subject="Blueprint Tier 1 — $175 Standard Rate">Book Blueprint — $145 Launch Rate</a></div>
     </div>
     <!-- T2 FEATURED -->
     <div class="tc feat">
@@ -308,7 +308,7 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
         <div class="ti"><span class="pl">+</span>One plan revision within 60 days if your situation changes</div>
         <div class="ti"><span class="pl">+</span>Priority email response within 24 hours for 60 days</div>
       </div>
-      <div class="tc-ftr"><a href="mailto:jenny@atelierninefour.com?subject=Blueprint Pro Tier 2 — $245 Launch" class="tc-cta">Book Blueprint Pro — $245 Launch</a></div>
+      <div class="tc-ftr"><a href="mailto:jenny@atelierninefour.com?subject=Blueprint Pro Tier 2 — $245 Launch" class="tc-cta" data-launch-label="Book Blueprint Pro — $245 Launch Rate" data-standard-label="Book Blueprint Pro — $295 Standard Rate" data-launch-subject="Blueprint Pro Tier 2 — $245 Launch" data-standard-subject="Blueprint Pro Tier 2 — $295 Standard Rate">Book Blueprint Pro — $245 Launch Rate</a></div>
     </div>
     <!-- T3 -->
     <div class="tc">
@@ -329,7 +329,7 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
         <div class="ti"><span class="pl">+</span>90-day email support for clients actively enrolling and transferring credits</div>
         <div class="ti"><span class="pl">+</span>Two plan revisions within 90 days</div>
       </div>
-      <div class="tc-ftr"><a href="mailto:jenny@atelierninefour.com?subject=Blueprint Complete Tier 3 — $395 Launch" class="tc-cta">Book Complete — $395 Launch Rate</a></div>
+      <div class="tc-ftr"><a href="mailto:jenny@atelierninefour.com?subject=Blueprint Complete Tier 3 — $395 Launch" class="tc-cta" data-launch-label="Book Complete — $395 Launch Rate" data-standard-label="Book Complete — $495 Standard Rate" data-launch-subject="Blueprint Complete Tier 3 — $395 Launch" data-standard-subject="Blueprint Complete Tier 3 — $495 Standard Rate">Book Complete — $395 Launch Rate</a></div>
     </div>
   </div>
 
@@ -398,7 +398,7 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
 <div class="testi">
   <div class="te-t">Client results on the way</div>
   <div class="te-b">Nine Four Legacy's first cohort is underway. Testimonials will appear here as clients complete their sessions and share their results.</div>
-  <a href="mailto:jenny@atelierninefour.com?subject=Blueprint — Launch Rate" class="btn-g">Book at Launch Rate →</a>
+  <a href="mailto:jenny@atelierninefour.com?subject=Blueprint — Launch Rate" class="btn-g" id="testimonial-booking-cta">Book at Launch Rate →</a>
 </div>
 
 <!-- FAQ -->
@@ -454,12 +454,14 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
   document.querySelectorAll('[data-launch-note]').forEach(function (note) {
     note.textContent = launchActive ? note.dataset.launchNote : note.dataset.standardNote;
   });
-  if (!launchActive) {
-    document.querySelectorAll('.tc-cta').forEach(function (button) {
-      button.textContent = button.textContent.replace(/\s*[—-]\s*\$\d+\s*Launch(?:\sRate)?/i, '').replace('Launch Rate', 'Standard Rate').replace('Launch', 'Standard Rate');
-      button.href = button.href.replace(/%20%E2%80%94%20%24\d+%20Launch(?:%20Rate)?/i, '').replace(/%20Launch(?:%20Rate)?/i, '%20Standard%20Rate');
-    });
-  }
+  document.querySelectorAll('.tc-cta').forEach(function (button) {
+    button.textContent = launchActive ? button.dataset.launchLabel : button.dataset.standardLabel;
+    const subject = launchActive ? button.dataset.launchSubject : button.dataset.standardSubject;
+    button.href = 'mailto:jenny@atelierninefour.com?subject=' + encodeURIComponent(subject);
+  });
+  const testimonialCta = document.getElementById('testimonial-booking-cta');
+  testimonialCta.textContent = launchActive ? 'Book at Launch Rate →' : 'Book at Standard Rate →';
+  testimonialCta.href = 'mailto:jenny@atelierninefour.com?subject=' + encodeURIComponent(launchActive ? 'Blueprint — Launch Rate' : 'Blueprint — Standard Rate');
 })();
 </script>
 </body>
