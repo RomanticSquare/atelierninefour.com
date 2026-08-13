@@ -40,9 +40,9 @@
   "description": "Personalized CBE degree planning sessions for adult learners, first-generation families, and non-traditional students. Credit audit, institution recommendation, platform stack, and written roadmap in 72 hours.",
   "url": "https://atelierninefour.com/workwithme.html",
   "offers": [
-    {"@type":"Offer","name":"Blueprint","price":"175","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Blueprint Pro","price":"295","priceCurrency":"USD"},
-    {"@type":"Offer","name":"Blueprint Complete","price":"495","priceCurrency":"USD"}
+    {"@type":"Offer","name":"Blueprint","price":"145","priceCurrency":"USD","priceValidUntil":"2026-10-31"},
+    {"@type":"Offer","name":"Blueprint Pro","price":"245","priceCurrency":"USD","priceValidUntil":"2026-10-31"},
+    {"@type":"Offer","name":"Blueprint Complete","price":"395","priceCurrency":"USD","priceValidUntil":"2026-10-31"}
   ],
   "areaServed": "United States"
 }
@@ -214,8 +214,8 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
 </div>
 
 <div class="launch">
-  <div class="launch-t">Launch window — reduced rates through August 2026. <span>In exchange for an honest written testimonial within 2 weeks of your session.</span></div>
-  <div class="launch-b">First 10 Clients</div>
+  <div class="launch-t" id="launch-pricing-copy">Launch pricing is available through October 31, 2026: Blueprint $145, Blueprint Pro $245, and Blueprint Complete $395. First-cohort clients lock in their launch rate in exchange for an honest written testimonial within two weeks of their session. Standard rates begin November 1, 2026.</div>
+  <div class="launch-b" id="launch-pricing-badge">First Cohort Pricing</div>
 </div>
 
 <!-- WHY CBE -->
@@ -273,8 +273,8 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
         <div class="tc-num">Tier 01 · Blueprint</div>
         <div class="tc-name">The College Blueprint</div>
         <div class="tc-sub">Direction + Written Roadmap</div>
-        <span class="tc-price">$175</span>
-        <div class="tc-pnote">Launch rate: $145 through August 2026</div>
+        <span class="tc-price" data-launch-price="$145" data-standard-price="$175">$145</span>
+        <div class="tc-pnote" data-launch-note="Standard rate $175 beginning November 1, 2026" data-standard-note="Standard rate">Standard rate $175 beginning November 1, 2026</div>
         <div class="tc-time">⏱ 30-Minute Session</div>
       </div>
       <div class="tc-body">
@@ -295,8 +295,8 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
         <div class="tc-num">Tier 02 · Blueprint Pro</div>
         <div class="tc-name">Blueprint Pro</div>
         <div class="tc-sub">Complete Toolkit + Follow-Through</div>
-        <span class="tc-price">$295</span>
-        <div class="tc-pnote">Launch rate: $245 through August 2026</div>
+        <span class="tc-price" data-launch-price="$245" data-standard-price="$295">$245</span>
+        <div class="tc-pnote" data-launch-note="Standard rate $295 beginning November 1, 2026" data-standard-note="Standard rate">Standard rate $295 beginning November 1, 2026</div>
         <div class="tc-time">⏱ 30-Min Session + 15-Min Follow-Up at 30 Days</div>
       </div>
       <div class="tc-body">
@@ -316,8 +316,8 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
         <div class="tc-num">Tier 03 · Blueprint Complete</div>
         <div class="tc-name">Blueprint Complete</div>
         <div class="tc-sub">Full Enrollment Support · 90 Days</div>
-        <span class="tc-price">$495</span>
-        <div class="tc-pnote">Launch rate: $395 through August 2026</div>
+        <span class="tc-price" data-launch-price="$395" data-standard-price="$495">$395</span>
+        <div class="tc-pnote" data-launch-note="Save $40,000+ for $395. Standard rate $495 beginning November 1, 2026" data-standard-note="Save $40,000+ for $495">Save $40,000+ for $395. Standard rate $495 beginning November 1, 2026</div>
         <div class="tc-time">⏱ Two 30-Min Sessions + 90-Day Email Support</div>
       </div>
       <div class="tc-body">
@@ -374,8 +374,9 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
   <div class="gr"></div>
   <div class="founder">
     <div>
-      <p class="f-intro">Jenny Francois is the founder of Atelier Nine Four — a creative operations studio launched in 2026. She built the studio while managing a demanding full-time career and an active academic track. Every system in Nine Four Legacy was built from real professional experience and applied in real time.</p>
-      <p class="f-intro">The College Blueprint is not based on research. It is based on the same CBE strategy Jenny has navigated herself — including the platform sequencing, transfer credit process, and institution selection that reduces a 120-credit degree cost by 40–70%. Credentials and full professional background will be listed here upon program completion.</p>
+      <p class="f-intro">Jenny Francois is the founder of Atelier Nine Four, a creative operations studio built on more than 20 years of executive administration, event production, and program operations experience at Fortune 500 scale. Her work has included senior executive support, national event leadership, and employee resource group leadership.</p>
+      <p class="f-intro">Jenny completed her Bachelor of Arts in Business Administration, summa cum laude, at the University of Maine at Presque Isle and earned Dean's List honors in both spring and summer 2026. She has been admitted to UMPI's Master of Arts in Organizational Leadership program, beginning August 31, 2026.</p>
+      <p class="f-intro">She is also the proof of concept behind the College Blueprint. Jenny used the same competency-based education strategy, transfer-credit platforms, course sequencing, and institution-selection process she now maps for clients. This is lived experience backed by the operational discipline to turn a complicated path into a clear, usable plan.</p>
       <div class="f-stats">
         <div class="fs"><span class="fs-n">20+</span><span class="fs-l">Years professional experience</span></div>
         <div class="fs"><span class="fs-n">5</span><span class="fs-l">CBE institutions mapped</span></div>
@@ -384,7 +385,10 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
     </div>
     <div class="fc">
       <div class="fc-lbl">Professional Background</div>
-      <div class="fc-i"><span class="fc-dot">✦</span>20+ years career operations and event production experience at a senior level</div>
+      <div class="fc-i"><span class="fc-dot">✦</span>20+ years in executive administration, event production, and program operations at Fortune 500 scale</div>
+      <div class="fc-i"><span class="fc-dot">✦</span>B.A. Business Administration, summa cum laude · Dean's List, Spring and Summer 2026</div>
+      <div class="fc-i"><span class="fc-dot">✦</span>Admitted to UMPI's M.A. in Organizational Leadership program · Fall 2026</div>
+      <div class="fc-i"><span class="fc-dot">✦</span>National Events Chair and employee resource group leader</div>
       <div class="fc-i"><span class="fc-dot">✦</span>Founder, Atelier Nine Four · Nine Four Digital · Nine Four Legacy</div>
     </div>
   </div>
@@ -393,7 +397,7 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
 <!-- TESTIMONIALS -->
 <div class="testi">
   <div class="te-t">Client results on the way</div>
-  <div class="te-b">Nine Four Legacy launched in May 2026. The first sessions are underway. Testimonials will appear here as clients complete their sessions and share their results.</div>
+  <div class="te-b">Nine Four Legacy's first cohort is underway. Testimonials will appear here as clients complete their sessions and share their results.</div>
   <a href="mailto:jenny@atelierninefour.com?subject=Blueprint — Launch Rate" class="btn-g">Book at Launch Rate →</a>
 </div>
 
@@ -411,7 +415,7 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
 
   <details class="faq"><summary>Can I get a plan without a Zoom call?<span class="fi">+</span></summary><div class="fb">Yes. Email jenny@atelierninefour.com with your target degree, any prior credits, your institution preference if you have one, and a brief description of your situation. Jenny will review it, confirm via email, and deliver a written roadmap within 72 hours of payment.</div></details>
 
-  <details class="faq"><summary>What is the launch window pricing?<span class="fi">+</span></summary><div class="fb">Through August 2026, all sessions are offered at reduced launch rates: Blueprint $145 (standard $175), Blueprint Pro $245 (standard $295), Blueprint Complete $395 (standard $495). This window is time-limited. Launch clients provide an honest written testimonial within 2 weeks of their session.</div></details>
+  <details class="faq"><summary>What is the launch window pricing?<span class="fi">+</span></summary><div class="fb" id="faq-pricing-copy">Launch pricing is available through October 31, 2026: Blueprint $145, Blueprint Pro $245, and Blueprint Complete $395. First-cohort clients lock in their launch rate in exchange for an honest written testimonial within two weeks of their session. Standard rates begin November 1, 2026.</div></details>
 
   <details class="faq"><summary>Is this official academic advising?<span class="fi">+</span></summary><div class="fb">No. Nine Four Legacy is an independent strategy service, not affiliated with or employed by any educational institution. All transfer equivalency information reflects publicly available data at the time of the session. Always verify credit transfer directly with your institution's registrar before spending money on any platform course.</div></details>
 
@@ -432,5 +436,31 @@ footer{background:var(--navy);border-top:2px solid rgba(201,168,76,0.18);padding
     <a href="mailto:jenny@atelierninefour.com">Contact</a>
   </div>
 </footer>
+<script>
+(function () {
+  const launchEnds = new Date('2026-11-01T00:00:00-04:00');
+  const launchActive = new Date() < launchEnds;
+  const launchCopy = 'Launch pricing is available through October 31, 2026: Blueprint $145, Blueprint Pro $245, and Blueprint Complete $395. First-cohort clients lock in their launch rate in exchange for an honest written testimonial within two weeks of their session. Standard rates begin November 1, 2026.';
+  const standardCopy = 'Launch pricing has ended. First-cohort clients locked in their launch rate. Standard rates are now in effect: Blueprint $175, Blueprint Pro $295, and Blueprint Complete $495.';
+  const sharedCopy = launchActive ? launchCopy : standardCopy;
+
+  document.getElementById('launch-pricing-copy').textContent = sharedCopy;
+  document.getElementById('faq-pricing-copy').textContent = sharedCopy;
+  document.getElementById('launch-pricing-badge').textContent = launchActive ? 'First Cohort Pricing' : 'Standard Pricing';
+
+  document.querySelectorAll('[data-launch-price]').forEach(function (price) {
+    price.textContent = launchActive ? price.dataset.launchPrice : price.dataset.standardPrice;
+  });
+  document.querySelectorAll('[data-launch-note]').forEach(function (note) {
+    note.textContent = launchActive ? note.dataset.launchNote : note.dataset.standardNote;
+  });
+  if (!launchActive) {
+    document.querySelectorAll('.tc-cta').forEach(function (button) {
+      button.textContent = button.textContent.replace(/\s*[—-]\s*\$\d+\s*Launch(?:\sRate)?/i, '').replace('Launch Rate', 'Standard Rate').replace('Launch', 'Standard Rate');
+      button.href = button.href.replace(/%20%E2%80%94%20%24\d+%20Launch(?:%20Rate)?/i, '').replace(/%20Launch(?:%20Rate)?/i, '%20Standard%20Rate');
+    });
+  }
+})();
+</script>
 </body>
 </html>

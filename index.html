@@ -1054,8 +1054,8 @@ footer {
         <div style="font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:8px;">Blueprint · Tier 1</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:white;margin-bottom:6px;">The College Blueprint</div>
         <div style="font-size:10px;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:12px;">30-min session · Written roadmap in 72 hrs</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);margin-bottom:4px;">$175</div>
-        <div style="font-size:9px;font-weight:300;color:rgba(255,255,255,0.35);">Launch rate $145 through Aug 2026</div>
+        <div class="legacy-price" data-launch-price="$145" data-standard-price="$175" style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);margin-bottom:4px;">$145</div>
+        <div class="legacy-price-note" data-launch-note="Standard rate $175 beginning November 1, 2026" data-standard-note="Standard rate" style="font-size:9px;font-weight:300;color:rgba(255,255,255,0.35);">Standard rate $175 beginning November 1, 2026</div>
       </div>
 
       <div style="background:rgba(201,168,76,0.08);border:2px solid var(--gold);padding:20px 22px;position:relative;overflow:hidden;">
@@ -1063,16 +1063,16 @@ footer {
         <div style="font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.7);margin-bottom:8px;">Blueprint Pro · Tier 2</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:white;margin-bottom:6px;">Blueprint Pro</div>
         <div style="font-size:10px;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:12px;">Session + tools + 30-day follow-up</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);margin-bottom:4px;">$295</div>
-        <div style="font-size:9px;font-weight:300;color:rgba(255,255,255,0.35);">Launch rate $245 through Aug 2026</div>
+        <div class="legacy-price" data-launch-price="$245" data-standard-price="$295" style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);margin-bottom:4px;">$245</div>
+        <div class="legacy-price-note" data-launch-note="Standard rate $295 beginning November 1, 2026" data-standard-note="Standard rate" style="font-size:9px;font-weight:300;color:rgba(255,255,255,0.35);">Standard rate $295 beginning November 1, 2026</div>
       </div>
 
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);padding:20px 22px;">
         <div style="font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:8px;">Blueprint Complete · Tier 3</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:white;margin-bottom:6px;">Blueprint Complete</div>
         <div style="font-size:10px;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:12px;">Two sessions · 90-day email support</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);margin-bottom:4px;">$495</div>
-        <div style="font-size:9px;font-weight:300;color:rgba(255,255,255,0.35);">Launch rate $395 through Aug 2026</div>
+        <div class="legacy-price" data-launch-price="$395" data-standard-price="$495" style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);margin-bottom:4px;">$395</div>
+        <div class="legacy-price-note" data-launch-note="Save $40,000+ for $395. Standard rate $495 beginning November 1, 2026" data-standard-note="Save $40,000+ for $495" style="font-size:9px;font-weight:300;color:rgba(255,255,255,0.35);">Save $40,000+ for $395. Standard rate $495 beginning November 1, 2026</div>
       </div>
 
     </div>
@@ -1100,8 +1100,8 @@ footer {
       <!-- Placeholder review cards — replaced by real reviews as they come in -->
       <div id="homepage-reviews">
         <div style="background:var(--cream);border-left:3px solid var(--gold);padding:20px 22px;margin-bottom:14px;">
-          <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dgold);margin-bottom:8px;">Reviews launching May 2026</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;color:var(--navy);line-height:1.6;font-style:italic;">Nine Four Digital launched in May 2026. Client reviews are collected after every purchase and session. The first reviews will appear here as they come in.</div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dgold);margin-bottom:8px;">Reviews are being collected</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;color:var(--navy);line-height:1.6;font-style:italic;">Client reviews are collected after every purchase and session. Verified reviews will appear here as clients share their experiences.</div>
           <div style="font-size:9.5px;font-weight:300;color:var(--gray);margin-top:10px;">Purchased a product? <a href="mailto:jenny@atelierninefour.com?subject=Review Submission" style="color:var(--gold);font-weight:600;text-decoration:none;">Send your review →</a></div>
         </div>
       </div>
@@ -1202,6 +1202,17 @@ footer {
       </div>`;
     }).join('') + `<div style="margin-top:4px;"><a href="reviews.html" style="font-size:9px;font-weight:600;color:var(--gold);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">All reviews →</a></div>`;
   } catch(e) {}
+})();
+</script>
+<script>
+(function () {
+  const launchActive = new Date() < new Date('2026-11-01T00:00:00-04:00');
+  document.querySelectorAll('.legacy-price').forEach(function (price) {
+    price.textContent = launchActive ? price.dataset.launchPrice : price.dataset.standardPrice;
+  });
+  document.querySelectorAll('.legacy-price-note').forEach(function (note) {
+    note.textContent = launchActive ? note.dataset.launchNote : note.dataset.standardNote;
+  });
 })();
 </script>
 
