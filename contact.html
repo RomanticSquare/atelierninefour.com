@@ -64,49 +64,18 @@
       <p class="notice" style="margin-top:12px">Please don't include confidential, financial or employee information in this form. We'll agree on how to handle anything sensitive once we're working together.</p>
       <p>Prefer email? Write to <a href="mailto:jenny@atelierninefour.com">jenny@atelierninefour.com</a>.</p>
     </div>
-    <form class="inquiry" id="inquiry" novalidate>
-      <div class="field"><label for="f-interest">What would you like to discuss?</label>
-        <select id="f-interest" name="interest"><option value="general">A fit call: not sure yet</option><option value="diagnostic">Operational Clarity Diagnostic</option><option value="build">Operating System Build</option><option value="sprint">AI Adoption Sprint</option><option value="fractional">Fractional operations support</option><option value="workshop">A team workshop</option></select></div>
-      <div class="row2">
-        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required aria-describedby="e-name"><span class="field-err" id="e-name"></span></div>
-        <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="field-err" id="e-email"></span></div>
-      </div>
-      <div class="field"><label for="f-msg">What's happening? <span class="hint">A few sentences is plenty</span></label><textarea id="f-msg" name="message" placeholder="What's not working, and what would better look like?" required aria-describedby="e-message"></textarea><span class="field-err" id="e-message"></span></div>
-      <div class="row2">
-        <div class="field"><label for="f-org">Organization <span class="hint">optional</span></label><input id="f-org" name="org" autocomplete="organization"></div>
-        <div class="field"><label for="f-size">Team size <span class="hint">optional</span></label>
-          <select id="f-size" name="size"><option value="">Choose one</option><option>Under 10</option><option>10 to 25</option><option>26 to 50</option><option>51 to 100</option><option>Over 100</option></select></div>
-      </div>
-      <div class="field"><label for="f-timing">Timing <span class="hint">optional</span></label>
-        <select id="f-timing" name="timing"><option value="">Choose one</option><option>As soon as possible</option><option>In the next 1 to 3 months</option><option>Just exploring</option></select></div>
-      <p class="form-note">This opens a pre-filled email in your email app. Press send there to reach me. Nothing is stored on this site.</p>
-      <div><button class="btn" type="submit">Prepare email inquiry</button></div>
-      <p class="form-status" id="f-status" role="status" aria-live="polite"></p>
-      <div id="f-fallback" hidden class="field"><label for="f-copy">If no email app opened, copy this and send it to <strong style="user-select:all">jenny@atelierninefour.com</strong></label><textarea id="f-copy" readonly></textarea><div><button class="btn ghost" type="button" id="f-copybtn">Copy message</button></div></div>
-    </form>
+    <div class="form-embed-wrap">
+      <iframe id="fit-form" class="form-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSfq_wbagNzQJGiB8Uu8lApFPVTu_4mj0BsXECKCYDRkiOMgBQ/viewform?embedded=true" title="Request a fit call form">Loading the form...</iframe>
+      <p class="form-note">Form not showing? <a id="fit-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfq_wbagNzQJGiB8Uu8lApFPVTu_4mj0BsXECKCYDRkiOMgBQ/viewform" target="_blank" rel="noopener" data-ga="fit_call_cta_click" data-ga-label="form new tab">Open it in a new tab</a>. Responses are collected through Google Forms.</p>
+    </div>
   </div>
 </section>
 <script>
 (function(){
-  var f=document.getElementById('inquiry'), s=document.getElementById('f-status'), el=function(n){return f.elements.namedItem(n);};
-  try{var q=new URLSearchParams(location.search).get('interest'); if(q&&el('interest').querySelector('option[value="'+q+'"]')) el('interest').value=q;}catch(e){}
-  var started=false; f.addEventListener('input',function(){if(!started){started=true; if(window.a94event)a94event('inquiry_start',{interest:el('interest').value});}});
-  function setErr(n,msg){var i=el(n), e=document.getElementById('e-'+n); i.setAttribute('aria-invalid',msg?'true':'false'); e.textContent=msg||'';}
-  f.addEventListener('submit',function(ev){
-    ev.preventDefault();
-    var name=el('name').value.trim(), email=el('email').value.trim(), msg=el('message').value.trim(), bad=[];
-    setErr('name',name?'':'Add your name.'); if(!name)bad.push('name');
-    var okEmail=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email); setErr('email',okEmail?'':'Add an email address like name@company.com.'); if(!okEmail)bad.push('email');
-    setErr('message',msg?'':'Add a sentence or two about the situation.'); if(!msg)bad.push('message');
-    if(bad.length){s.className='form-status err'; s.textContent='Please fix the highlighted fields.'; el(bad[0]).focus(); return;}
-    var interest=el('interest').options[el('interest').selectedIndex].text;
-    var body='Interested in: '+interest+'\nName: '+name+'\nEmail: '+email+'\nOrganization: '+el('org').value+'\nTeam size: '+el('size').value+'\nTiming: '+el('timing').value+'\n\n'+msg;
-    if(window.a94event) a94event('inquiry_email_draft_attempt',{interest:el('interest').value,team_size:el('size').value||'unspecified'});
-    document.getElementById('f-copy').value='To: jenny@atelierninefour.com\nSubject: Fit call request\n\n'+body; document.getElementById('f-fallback').hidden=false;
-    s.className='form-status'; s.textContent='Your email app should open with the message ready. Press send there to reach me.';
-    window.location.href='mailto:jenny@atelierninefour.com?subject='+encodeURIComponent('Fit call request: '+interest)+'&body='+encodeURIComponent(body);
-  });
-  document.getElementById('f-copybtn').addEventListener('click',function(){var t=document.getElementById('f-copy'); try{navigator.clipboard.writeText(t.value).then(function(){s.textContent='Copied. Paste it into an email to jenny@atelierninefour.com.';},function(){t.select();});}catch(e){t.select();}});
+  var MAP={general:'A fit call: not sure yet',diagnostic:'Operational Clarity Diagnostic',build:'Operating System Build',sprint:'AI Adoption Sprint',fractional:'Fractional operations support',workshop:'A team workshop'};
+  var fr=document.getElementById('fit-form'), ln=document.getElementById('fit-form-link'), key='general';
+  try{var q=new URLSearchParams(location.search).get('interest'); if(q&&MAP[q]){key=q; var pre='?usp=pp_url&entry.1125508494='+encodeURIComponent(MAP[q]); fr.src='https://docs.google.com/forms/d/e/1FAIpQLSfq_wbagNzQJGiB8Uu8lApFPVTu_4mj0BsXECKCYDRkiOMgBQ/viewform'+pre+'&embedded=true'; ln.href='https://docs.google.com/forms/d/e/1FAIpQLSfq_wbagNzQJGiB8Uu8lApFPVTu_4mj0BsXECKCYDRkiOMgBQ/viewform'+pre;}}catch(e){}
+  var loads=0; fr.addEventListener('load',function(){loads++; if(loads===2&&window.a94event) a94event('inquiry_submit',{interest:key});});
 })();
 </script>
 </main>
