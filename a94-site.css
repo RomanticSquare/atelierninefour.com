@@ -141,6 +141,8 @@ details.case[open] summary .plus{transform:rotate(45deg)}
 .prose{display:grid;gap:18px;max-width:66ch}
 .prose p{color:var(--ink-soft)}
 .prose strong{color:var(--ink)}
+/* Founder portrait */
+.portrait{width:100%;max-width:400px;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);box-shadow:0 24px 60px rgba(13,27,42,.18)}
 blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:1.7rem;line-height:1.3;color:var(--ink);border-left:2px solid var(--gold);padding-left:24px}
 
 /* FAQ */
