@@ -1,214 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="favicon.svg">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About · Nine Four Digital</title>
-<link rel="stylesheet" href="a94-styles.css" />
-<style>
-  .about-main { background: var(--cream); }
-
-  .about-layout {
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 6vw;
-    align-items: start;
-    margin-top: 2.4rem;
-  }
-
-  .about-body p {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--gray);
-    margin-bottom: 1.6rem;
-    line-height: 1.9;
-  }
-  .about-body p strong { font-weight: 600; color: var(--navy); }
-
-  .about-sidebar {
-    background: var(--navy);
-    padding: 2.4rem 2rem;
-    position: sticky;
-    top: 88px;
-  }
-  .sidebar-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.6rem;
-  }
-  .sidebar-list { list-style: none; }
-  .sidebar-list li {
-    font-size: 0.85rem;
-    font-weight: 300;
-    color: rgba(245,240,232,0.72);
-    padding: 0.75rem 0 0.75rem 1.2rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    line-height: 1.5;
-    position: relative;
-  }
-  .sidebar-list li::before {
-    content: '✦';
-    position: absolute;
-    left: 0;
-    font-size: 0.45rem;
-    top: 1rem;
-    color: var(--gold);
-  }
-  .sidebar-list li:last-child { border-bottom: none; }
-
-  /* ── VALUES BAND ── */
-  .values-band {
-    background: var(--white);
-    padding: 80px 5vw;
-  }
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-  .value-item {}
-  .value-line {
-    width: 28px; height: 2px;
-    background: var(--gold);
-    margin-bottom: 1rem;
-  }
-  .value-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    font-size: 1.2rem;
-    color: var(--navy);
-    margin-bottom: 0.5rem;
-  }
-  .value-desc {
-    font-size: 0.82rem;
-    font-weight: 300;
-    color: var(--gray);
-    line-height: 1.7;
-  }
-
-  @media (max-width: 768px) {
-    .about-layout { grid-template-columns: 1fr; }
-    .about-sidebar { position: static; }
-  }
-</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-87QVKBQM8X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-87QVKBQM8X');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About Jenny François | Atelier Nine Four</title>
+<meta name="description" content="Jenny François founded Atelier Nine Four after 15+ years running day-to-day operations for senior sales and marketing leaders. M.A. in Organizational Leadership.">
+<meta name="author" content="Jenny François · Atelier Nine Four">
+<link rel="canonical" href="https://atelierninefour.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelierninefour.com/about.html">
+<meta property="og:title" content="About Jenny François | Atelier Nine Four">
+<meta property="og:description" content="Jenny François founded Atelier Nine Four after 15+ years running day-to-day operations for senior sales and marketing leaders. M.A. in Organizational Leadership.">
+<meta property="og:image" content="https://atelierninefour.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier Nine Four · Strategy and Operations">
+<meta property="og:site_name" content="Atelier Nine Four">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D1B2A">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="a94-site.css">
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="index.html">
-    Nine Four Digital
-    <span>Atelier Nine Four</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="story.html">Our Story</a></li>
-    <li><a href="about.html" class="active">About</a></li>
-    <li><a href="shop.html">Browse the Shop</a></li>
-    <li><a href="coming.html">What's Coming</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<div class="page-hero">
-  <div class="page-eyebrow">About</div>
-  <h1>The studio<br/>behind the <em>work</em>.</h1>
-  <p class="page-hero-sub">Atelier Nine Four is a creative house built by someone who has spent two decades at the intersection of professional operations, community, and culture.</p>
-</div>
-
-<!-- ABOUT BODY -->
-<section class="about-main">
-  <div class="about-layout">
-    <div class="about-body">
-      <div class="section-label">Who Built This</div>
-      <p>Atelier Nine Four was built by someone who has spent more than two decades working across corporate environments, cultural spaces, and community organizations. Not observing them. Operating inside them.</p>
-      <p>That distinction matters. The products in this catalog were not designed by studying the market. They were designed by someone who understands, from the inside, what professionals actually need — and what most of what's out there fails to deliver.</p>
-      <p>Nine Four Digital is the first public chapter of the studio. The tools here — career templates, financial systems, operational resources — exist because the gap between what's available and what's actually useful is real. And it disproportionately affects the people who can least afford it.</p>
-      <p><strong>This studio was built for those people. That has never changed.</strong></p>
-
-      <div class="section-label" style="margin-top: 2.8rem;">The Approach</div>
-      <p>Everything in this catalog is profession-specific. Generic templates exist everywhere. Nine Four Digital does not compete on price or volume — it competes on precision. A resume template built for an Executive Assistant is not the same as one built for a Project Manager. The ATS keywords are different. The structure is different. The language is different.</p>
-      <p>That level of specificity takes longer to build. It is worth it.</p>
-    </div>
-
-    <div class="about-sidebar">
-      <div class="sidebar-heading">What this studio is built on</div>
-      <ul class="sidebar-list">
-        <li>20+ years across professional operations and community work</li>
-        <li>Grounded in real workplace environments — not research</li>
-        <li>Built for people who are underserved by what already exists</li>
-        <li>A background spanning corporate, culture, and community</li>
-        <li>Precision in every product — nothing here is accidental</li>
-        <li>Designed to evolve over the next decade</li>
-      </ul>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Selected Work</a><a href="insights.html">Insights</a><a href="about.html" aria-current="page">About</a>
+      <a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="header">Request a fit call</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero short">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h1>Built from the inside of how <em>leadership teams actually run.</em></h1>
+  </div>
+</section>
+<section>
+  <div class="wrap split">
+    <div class="monogram" aria-hidden="true"><b>JF</b></div>
+    <div class="prose">
+      <p class="eyebrow">Jenny François · Founder</p>
+      <p>For nearly twelve years at a Fortune Global 500 consumer technology company, I ran day-to-day operations for four VPs and their teams, about 90 people across national sales, product marketing and retail account teams. The title said executive support. The work was operations: building the rhythm leaders decided in, turning loose priorities into owned plans, and keeping cross-functional work moving between teams that didn't report to each other.</p>
+      <p>I also led people. I mentored and coordinated the division's executive assistants from 2018, onboarding more than a dozen new hires a year. I directed a two-week sales academy for cohorts of 30+ new hires, partnering with HR, Finance, Legal and Compliance. And I rose to National Vice Chair of an employee resource group, leading executive-facing programs for 150 to 180+ attendees.</p>
+      <p>I completed a Master of Arts in Organizational Leadership in 2026, with every course at Exceeds Proficiency. I build my own decision-support tools with AI every day, so I know where it helps and where it gets in the way.</p>
+      <blockquote>Most teams don't have a strategy problem. They have a system problem that makes good strategy impossible to execute.</blockquote>
+      <div class="actions" style="margin-top:4px"><a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="about">Request a fit call</a><a class="btn ghost" href="https://www.linkedin.com/in/jennyfrancois/" target="_blank" rel="noopener" data-ga="linkedin_click" data-ga-label="about">LinkedIn</a></div>
     </div>
   </div>
 </section>
-
-<!-- VALUES -->
-<section class="values-band">
-  <div class="section-label">The Work Ethic</div>
-  <h2 class="section-heading">What guides<br/>every <em>decision</em>.</h2>
-  <div class="values-grid">
-    <div class="value-item">
-      <div class="value-line"></div>
-      <div class="value-name">Specificity</div>
-      <div class="value-desc">Vague tools produce vague results. Every product here is built for a real profession, a real situation, a real person.</div>
-    </div>
-    <div class="value-item">
-      <div class="value-line"></div>
-      <div class="value-name">Integrity</div>
-      <div class="value-desc">Nothing in this catalog makes a claim that isn't defensible. No filler. No inflated language.</div>
-    </div>
-    <div class="value-item">
-      <div class="value-line"></div>
-      <div class="value-name">Access</div>
-      <div class="value-desc">Premium tools at prices built for real people — not just people who can already afford to pay for an edge.</div>
-    </div>
-    <div class="value-item">
-      <div class="value-line"></div>
-      <div class="value-name">Longevity</div>
-      <div class="value-desc">This is not a trend play. Every product is built to remain relevant and useful — not just for this quarter.</div>
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">How I work</p><h2>Three principles that don't bend.</h2></div>
+    <div class="grid g3">
+      <div class="card"><h3>Experience over theory</h3><p>Every recommendation comes from having run the work, not from a framework borrowed from a much larger company.</p></div>
+      <div class="card"><h3>Systems thinking</h3><p>A recurring problem is a design flaw, not a people flaw. Fix the system and the people get their time back.</p></div>
+      <div class="card"><h3>Honest claims</h3><p>Clear scope, defensible advice and no inflated promises. If something isn't worth automating or building, I'll say so.</p></div>
     </div>
   </div>
 </section>
-
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="wordmark">Atelier Nine Four</div>
-      <div class="tagline">Multifaceted by Design</div>
-      <p>A creative studio built at the intersection of systems, culture, and modern professional life.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Shop</h4>
-      <ul>
-        <li><a href="https://www.etsy.com" target="_blank">Etsy</a></li>
-        <li><a href="https://payhip.com" target="_blank">Payhip</a></li>
-        <li><a href="https://gumroad.com" target="_blank">Gumroad</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Studio</h4>
-      <ul>
-        <li><a href="story.html">Our Story</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="coming.html">What's Coming</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+<section>
+  <div class="wrap split">
+    <div><p class="eyebrow">The name</p><h2>Atelier Nine Four</h2></div>
+    <div class="prose">
+      <p><strong>Atelier</strong> is French for a working studio: a place where craft is practiced seriously, over time. <strong>Nine Four</strong> is a personal signature. Together they describe how I approach operations: as a craft, built carefully for each team, by a specific person who stands behind the work.</p>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 Atelier Nine Four · jenny@atelierninefour.com · All rights reserved.</p>
-    <div class="a94">A94</div>
+</section>
+<section class="dark cta">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Start with a conversation</p>
+      <h2>Thirty minutes to find out whether the problem is <em>the plan or the system.</em></h2>
+      <p class="lede" style="margin-top:18px">A free fit call. No prep needed, no pitch deck. If it isn't a fit, you'll leave with a clearer read on what to fix first.</p>
+    </div>
+    <div><a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="cta band">Request a fit call</a></div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="index.html"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
+        <p style="margin-top:14px;max-width:44ch">Operational clarity for growing teams: how decisions get made, how meetings earn their time, and how the work actually gets done.</p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Selected Work</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/jennyfrancois/" target="_blank" rel="noopener" data-ga="linkedin_click">LinkedIn</a></li>
+          <li><a href="mailto:jenny@atelierninefour.com">jenny@atelierninefour.com</a></li>
+          <li><a href="learning.html">Digital Learning</a></li>
+          <li><a href="license.html">Licensing</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base"><span>© 2026 Atelier Nine Four. All rights reserved.</span><span>Founded by Jenny François</span></div>
   </div>
 </footer>
-
+<script>
+(function(){
+  var b=document.querySelector('.menu-btn'), n=document.getElementById('site-nav');
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});}
+  function ev(name,params){try{if(window.gtag)gtag('event',name,params||{});}catch(e){}}
+  window.a94event=ev;
+  document.addEventListener('click',function(e){var a=e.target.closest('[data-ga]');if(a)ev(a.getAttribute('data-ga'),{label:a.getAttribute('data-ga-label')||a.textContent.trim().slice(0,60)});});
+  document.querySelectorAll('details.case').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)ev('case_study_view',{case_id:d.id});});});
+  var pv=document.body.getAttribute('data-page-event');if(pv)ev(pv);
+})();
+</script>
 </body>
 </html>
