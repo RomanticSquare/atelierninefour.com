@@ -11,13 +11,13 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Selected Work | Atelier Nine Four</title>
+<title>Approach & Examples | Atelier Nine Four</title>
 <meta name="description" content="Illustrative case studies showing how Atelier Nine Four diagnoses and designs operating systems for nonprofits, small businesses, professional services firms and agencies.">
 <meta name="author" content="Jenny François · Atelier Nine Four">
 <link rel="canonical" href="https://atelierninefour.com/work.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atelierninefour.com/work.html">
-<meta property="og:title" content="Selected Work | Atelier Nine Four">
+<meta property="og:title" content="Approach & Examples | Atelier Nine Four">
 <meta property="og:description" content="Illustrative case studies showing how Atelier Nine Four diagnoses and designs operating systems for nonprofits, small businesses, professional services firms and agencies.">
 <meta property="og:image" content="https://atelierninefour.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -29,6 +29,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="a94-site.css">
 </head>
 <body>
@@ -38,15 +39,15 @@
     <a class="brand" href="index.html" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html" aria-current="page">Selected Work</a><a href="insights.html">Insights</a><a href="about.html">About</a>
-      <a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="header">Request a fit call</a>
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html" aria-current="page">Examples</a><a href="insights.html">Insights</a><a href="about.html">About</a>
+      <a class="btn" href="contact.html" data-ga="fit_call_cta_click" data-ga-label="header">Request a fit call</a>
     </nav>
   </div>
 </header>
 <main id="main">
 <section class="hero short">
   <div class="wrap">
-    <p class="eyebrow">Selected Work</p>
+    <p class="eyebrow">Approach &amp; Examples</p>
     <h1>How I think through an operations problem, <em>case by case.</em></h1>
     <p class="lede">Each case follows the same path: situation, symptoms, diagnosis, design and the measures that would show whether it's working.</p>
   </div>
@@ -104,7 +105,7 @@
       <h2>Thirty minutes to find out whether the problem is <em>the plan or the system.</em></h2>
       <p class="lede" style="margin-top:18px">A free fit call. No prep needed, no pitch deck. If it isn't a fit, you'll leave with a clearer read on what to fix first.</p>
     </div>
-    <div><a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="cta band">Request a fit call</a></div>
+    <div><a class="btn" href="contact.html" data-ga="fit_call_cta_click" data-ga-label="cta band">Request a fit call</a></div>
   </div>
 </section>
 </main>
@@ -119,7 +120,7 @@
         <h4>Studio</h4>
         <ul>
           <li><a href="services.html">Services</a></li>
-          <li><a href="work.html">Selected Work</a></li>
+          <li><a href="work.html">Approach &amp; Examples</a></li>
           <li><a href="insights.html">Insights</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -143,7 +144,10 @@
 <script>
 (function(){
   var b=document.querySelector('.menu-btn'), n=document.getElementById('site-nav');
-  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});}
+  function closeNav(){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
+    n.addEventListener('click',function(e){if(e.target.closest('a'))closeNav();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){closeNav();b.focus();}});}
   function ev(name,params){try{if(window.gtag)gtag('event',name,params||{});}catch(e){}}
   window.a94event=ev;
   document.addEventListener('click',function(e){var a=e.target.closest('[data-ga]');if(a)ev(a.getAttribute('data-ga'),{label:a.getAttribute('data-ga-label')||a.textContent.trim().slice(0,60)});});

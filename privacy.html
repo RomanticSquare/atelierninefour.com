@@ -29,6 +29,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="a94-site.css">
 </head>
 <body>
@@ -38,8 +39,8 @@
     <a class="brand" href="index.html" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Selected Work</a><a href="insights.html">Insights</a><a href="about.html">About</a>
-      <a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="header">Request a fit call</a>
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Examples</a><a href="insights.html">Insights</a><a href="about.html">About</a>
+      <a class="btn" href="contact.html" data-ga="fit_call_cta_click" data-ga-label="header">Request a fit call</a>
     </nav>
   </div>
 </header>
@@ -52,7 +53,7 @@
     <p><strong>What this site collects.</strong> This site uses Google Analytics to understand which pages are visited and how people find them. Google Analytics uses cookies and collects information such as pages viewed, approximate region and device type. It does not give me your name or email address.</p>
     <p><strong>Inquiries.</strong> The contact form does not store anything on this site. It opens your own email app, and anything you send arrives as a normal email to jenny@atelierninefour.com. I use it only to reply to you and to discuss possible work.</p>
     <p><strong>What I don't do.</strong> I don't sell or rent personal information, and I don't add you to a mailing list without your permission.</p>
-    <p><strong>Your choices.</strong> You can block analytics cookies in your browser settings or with Google's opt-out add-on. To ask what information I hold from your emails, or to have it deleted, write to <a href="mailto:jenny@atelierninefour.com">jenny@atelierninefour.com</a>.</p>
+    <p><strong>Your choices.</strong> You can block analytics cookies in your browser settings or with <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google's opt-out add-on</a>. To ask what information I hold from your emails, or to have it deleted, write to <a href="mailto:jenny@atelierninefour.com">jenny@atelierninefour.com</a>.</p>
     <p><strong>Changes.</strong> If this notice changes, the updated version will be posted here with a new effective date.</p>
   </div>
 </section>
@@ -68,7 +69,7 @@
         <h4>Studio</h4>
         <ul>
           <li><a href="services.html">Services</a></li>
-          <li><a href="work.html">Selected Work</a></li>
+          <li><a href="work.html">Approach &amp; Examples</a></li>
           <li><a href="insights.html">Insights</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -92,7 +93,10 @@
 <script>
 (function(){
   var b=document.querySelector('.menu-btn'), n=document.getElementById('site-nav');
-  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});}
+  function closeNav(){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
+    n.addEventListener('click',function(e){if(e.target.closest('a'))closeNav();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){closeNav();b.focus();}});}
   function ev(name,params){try{if(window.gtag)gtag('event',name,params||{});}catch(e){}}
   window.a94event=ev;
   document.addEventListener('click',function(e){var a=e.target.closest('[data-ga]');if(a)ev(a.getAttribute('data-ga'),{label:a.getAttribute('data-ga-label')||a.textContent.trim().slice(0,60)});});

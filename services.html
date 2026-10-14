@@ -29,6 +29,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="a94-site.css">
 </head>
 <body data-page-event="service_view">
@@ -38,8 +39,8 @@
     <a class="brand" href="index.html" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="index.html">Home</a><a href="services.html" aria-current="page">Services</a><a href="work.html">Selected Work</a><a href="insights.html">Insights</a><a href="about.html">About</a>
-      <a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="header">Request a fit call</a>
+      <a href="index.html">Home</a><a href="services.html" aria-current="page">Services</a><a href="work.html">Examples</a><a href="insights.html">Insights</a><a href="about.html">About</a>
+      <a class="btn" href="contact.html" data-ga="fit_call_cta_click" data-ga-label="header">Request a fit call</a>
     </nav>
   </div>
 </header>
@@ -70,6 +71,11 @@
           <div><h4>Included</h4><ul><li>Intake questionnaire</li><li>Two stakeholder interviews</li><li>One end-to-end process map</li><li>Findings memo with your top five fixes</li><li>45-minute readout with your leadership</li></ul></div>
           <div><h4>Not included</h4><ul><li>Implementing the fixes (that's the Build)</li><li>Access to confidential client or employee data</li><li>Additional interviews beyond scope, unless added by change order</li></ul></div>
         </div>
+        <div class="cols">
+          <div><h4>How it runs</h4><ul><li>The two weeks start once the scope is signed, the deposit is paid and your intake is back.</li><li>You choose the one process to map at kickoff, and we agree how success will be judged.</li><li>Your team's time: about an hour for intake, two 60-minute interviews with people you choose, and the 45-minute readout.</li></ul></div>
+          <div><h4>Investment</h4><ul><li>A fixed fee set by team size and the number of stakeholders involved.</li><li>Quoted in writing within two business days of the fit call.</li><li>The fee counts toward a Build booked within 30 days.</li></ul></div>
+        </div>
+        <div class="actions" style="margin-top:20px"><a class="btn" href="contact.html?interest=diagnostic" data-ga="fit_call_cta_click" data-ga-label="diagnostic">Discuss the Diagnostic</a></div>
       </div>
     </article>
 
@@ -115,7 +121,7 @@
       <div class="card"><span class="tag">Half day · 6 to 16 people</span><h3>AI Marketing Policy Workshop</h3><p>For marketing and communications teams already using AI tools with no written rules. In four hours the team drafts its own one-page AI use policy: what's allowed, what needs review, what's off limits, and who decides.</p></div>
       <div class="card"><span class="tag">3 hours · 8 to 20 people</span><h3>AI Marketing in a Morning</h3><p>For local business owners and their staff, often hosted by a chamber, association or library. Participants leave with marketing they can post that week and a simple routine for checking AI drafts before they go out.</p></div>
     </div>
-    <div class="actions"><a class="btn ghost" href="contact.html" data-ga="booking_click" data-ga-label="workshops">Ask about a workshop</a></div>
+    <div class="actions"><a class="btn ghost" href="contact.html?interest=workshop" data-ga="fit_call_cta_click" data-ga-label="workshops">Ask about a team workshop</a></div>
   </div>
 </section>
 
@@ -152,7 +158,7 @@
       <h2>Thirty minutes to find out whether the problem is <em>the plan or the system.</em></h2>
       <p class="lede" style="margin-top:18px">A free fit call. No prep needed, no pitch deck. If it isn't a fit, you'll leave with a clearer read on what to fix first.</p>
     </div>
-    <div><a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="cta band">Request a fit call</a></div>
+    <div><a class="btn" href="contact.html" data-ga="fit_call_cta_click" data-ga-label="cta band">Request a fit call</a></div>
   </div>
 </section>
 </main>
@@ -167,7 +173,7 @@
         <h4>Studio</h4>
         <ul>
           <li><a href="services.html">Services</a></li>
-          <li><a href="work.html">Selected Work</a></li>
+          <li><a href="work.html">Approach &amp; Examples</a></li>
           <li><a href="insights.html">Insights</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -191,7 +197,10 @@
 <script>
 (function(){
   var b=document.querySelector('.menu-btn'), n=document.getElementById('site-nav');
-  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});}
+  function closeNav(){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
+    n.addEventListener('click',function(e){if(e.target.closest('a'))closeNav();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){closeNav();b.focus();}});}
   function ev(name,params){try{if(window.gtag)gtag('event',name,params||{});}catch(e){}}
   window.a94event=ev;
   document.addEventListener('click',function(e){var a=e.target.closest('[data-ga]');if(a)ev(a.getAttribute('data-ga'),{label:a.getAttribute('data-ga-label')||a.textContent.trim().slice(0,60)});});

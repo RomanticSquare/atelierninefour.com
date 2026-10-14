@@ -1,8 +1,7 @@
 /* Atelier Nine Four · Strategy & Operations · site styles (Oct 2026 rebuild) */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root{
-  --navy:#0D1B2A; --navy-2:#13263A; --gold:#C9A84C; --gold-deep:#8A6420; --gold-soft:#F0E3C2;
+  --navy:#0D1B2A; --navy-2:#13263A; --gold:#C9A84C; --gold-deep:#7A5718; --gold-soft:#F0E3C2;
   --cream:#F5F0E8; --paper:#FFFFFF; --ink:#0D1B2A; --ink-soft:#4A5361; --line:#E2D8C6;
   --on-dark:#F5F0E8; --on-dark-soft:rgba(245,240,232,.74); --green:#1B6B4A;
   --bg:var(--cream); --surface:var(--paper);
@@ -28,7 +27,8 @@ h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;margin:0;te
 h1{font-size:clamp(2.6rem,6vw,4.6rem)}
 h2{font-size:clamp(2rem,4vw,3rem)}
 h3{font-size:1.6rem;line-height:1.15}
-h1 em,h2 em{font-style:italic;color:var(--gold)}
+h1 em,h2 em{font-style:italic;color:var(--gold-deep)}
+.dark h1 em,.dark h2 em,.hero h1 em{color:var(--gold)}
 p{margin:0}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
 @media (max-width:520px){.wrap{padding-inline:16px}}
@@ -49,7 +49,7 @@ p{margin:0}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
 .brand{display:flex;flex-direction:column;text-decoration:none;color:var(--gold);line-height:1.1}
 .brand b{font-family:var(--display);font-weight:500;font-size:1.35rem;letter-spacing:.06em}
-.brand span{font-size:.62rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(201,168,76,.8)}
+.brand span{font-size:.7rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(201,168,76,.8)}
 .nav{display:flex;align-items:center;gap:26px}
 .nav a{color:var(--on-dark-soft);text-decoration:none;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--gold)}
@@ -96,7 +96,8 @@ section{padding-block:clamp(64px,9vw,112px)}
 .alt .card{background:var(--bg)}
 .dark .card{background:var(--navy-2);border-color:rgba(201,168,76,.2)}
 .dark .card p{color:var(--on-dark-soft)}
-.card .num{font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--gold)}
+.card .num{font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--gold-deep)}
+.dark .card .num{color:var(--gold)}
 .card p{color:var(--ink-soft)}
 .step{position:relative;padding-top:56px}
 .step::before{content:attr(data-n);position:absolute;top:24px;left:28px;font:700 .75rem var(--body);letter-spacing:.2em;color:var(--gold-deep)}
@@ -169,6 +170,11 @@ fieldset{border:0;padding:0;margin:0}
 .chips input{accent-color:var(--gold);width:16px;height:16px;margin:0}
 .form-note{font-size:.85rem;color:var(--ink-soft)}
 .form-status{font-weight:600;color:var(--green)}
+.form-status.err,.field-err{color:#A23B2A}
+.field-err{font-size:.82rem;font-weight:600;min-height:0}
+.field-err:empty{display:none}
+.field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:#A23B2A}
+#f-copy{min-height:150px;font-size:.85rem}
 
 /* CTA band */
 .cta{text-align:left}

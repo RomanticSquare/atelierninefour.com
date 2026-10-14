@@ -29,7 +29,9 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="a94-site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Atelier Nine Four","url":"https://atelierninefour.com/","image":"https://atelierninefour.com/og-image.png","email":"jenny@atelierninefour.com","slogan":"Multifaceted by Design","description":"Fixed-scope operations consulting for founders and operators of 10 to 100 person teams.","founder":{"@type":"Person","name":"Jenny François","url":"https://atelierninefour.com/about.html","sameAs":["https://www.linkedin.com/in/jennyfrancois/"]}}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -38,8 +40,8 @@
     <a class="brand" href="index.html" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="index.html" aria-current="page">Home</a><a href="services.html">Services</a><a href="work.html">Selected Work</a><a href="insights.html">Insights</a><a href="about.html">About</a>
-      <a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="header">Request a fit call</a>
+      <a href="index.html" aria-current="page">Home</a><a href="services.html">Services</a><a href="work.html">Examples</a><a href="insights.html">Insights</a><a href="about.html">About</a>
+      <a class="btn" href="contact.html" data-ga="fit_call_cta_click" data-ga-label="header">Request a fit call</a>
     </nav>
   </div>
 </header>
@@ -50,9 +52,10 @@
     <h1>Operational clarity for teams that have outgrown <em>“the founder knows everything.”</em></h1>
     <p class="lede">I help founders and operators of 10 to 100 person teams fix how decisions get made, how meetings earn their time, how reporting gets trusted, and how new tools, AI included, actually get used.</p>
     <div class="actions">
-      <a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="hero">Request a fit call</a>
+      <a class="btn" href="contact.html" data-ga="fit_call_cta_click" data-ga-label="hero">Request a fit call</a>
       <a class="btn ghost" href="services.html">See how it works</a>
     </div>
+    <p class="lede" style="margin-top:20px;font-size:1rem">Most clients start with the two-week <a href="services.html#diagnostic" style="color:var(--gold)">Operational Clarity Diagnostic</a>: a fixed fee, a process map and the five fixes that matter most.</p>
   </div>
 </section>
 
@@ -109,10 +112,10 @@
       <h2>What I've actually done, not what I've read about.</h2>
     </div>
     <div class="grid g4">
-      <div class="card"><span class="num">150+</span><p>Attendees at executive-facing national programs I led from planning through delivery.</p></div>
+      <div class="card"><span class="num">150+</span><p>Attendees per executive-facing national program I led from planning through delivery.</p></div>
       <div class="card"><span class="num">30+</span><p>New sales hires per cohort in a two-week academy I directed end to end, with HR, Finance, Legal and Compliance.</p></div>
       <div class="card"><span class="num">20%+</span><p>Cost savings negotiated on flagship programs I owned from contract through final budget reconciliation.</p></div>
-      <div class="card"><span class="num">M.A.</span><p>Organizational Leadership, completed 2026, with every course at Exceeds Proficiency.</p></div>
+      <div class="card"><span class="num">M.A.</span><p>Organizational Leadership: all requirements completed in October 2026, every course at Exceeds Proficiency.</p></div>
     </div>
   </div>
 </section>
@@ -136,7 +139,7 @@
       <h2>Thirty minutes to find out whether the problem is <em>the plan or the system.</em></h2>
       <p class="lede" style="margin-top:18px">A free fit call. No prep needed, no pitch deck. If it isn't a fit, you'll leave with a clearer read on what to fix first.</p>
     </div>
-    <div><a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="cta band">Request a fit call</a></div>
+    <div><a class="btn" href="contact.html" data-ga="fit_call_cta_click" data-ga-label="cta band">Request a fit call</a></div>
   </div>
 </section>
 </main>
@@ -151,7 +154,7 @@
         <h4>Studio</h4>
         <ul>
           <li><a href="services.html">Services</a></li>
-          <li><a href="work.html">Selected Work</a></li>
+          <li><a href="work.html">Approach &amp; Examples</a></li>
           <li><a href="insights.html">Insights</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -175,7 +178,10 @@
 <script>
 (function(){
   var b=document.querySelector('.menu-btn'), n=document.getElementById('site-nav');
-  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});}
+  function closeNav(){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
+    n.addEventListener('click',function(e){if(e.target.closest('a'))closeNav();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){closeNav();b.focus();}});}
   function ev(name,params){try{if(window.gtag)gtag('event',name,params||{});}catch(e){}}
   window.a94event=ev;
   document.addEventListener('click',function(e){var a=e.target.closest('[data-ga]');if(a)ev(a.getAttribute('data-ga'),{label:a.getAttribute('data-ga-label')||a.textContent.trim().slice(0,60)});});

@@ -30,6 +30,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/a94-site.css">
 </head>
 <body>
@@ -39,8 +40,8 @@
     <a class="brand" href="/index.html" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="/index.html">Home</a><a href="/services.html">Services</a><a href="/work.html">Selected Work</a><a href="/insights.html">Insights</a><a href="/about.html">About</a>
-      <a class="btn" href="/contact.html" data-ga="booking_click" data-ga-label="header">Request a fit call</a>
+      <a href="/index.html">Home</a><a href="/services.html">Services</a><a href="/work.html">Examples</a><a href="/insights.html">Insights</a><a href="/about.html">About</a>
+      <a class="btn" href="/contact.html" data-ga="fit_call_cta_click" data-ga-label="header">Request a fit call</a>
     </nav>
   </div>
 </header>
@@ -61,7 +62,7 @@
         <h4>Studio</h4>
         <ul>
           <li><a href="/services.html">Services</a></li>
-          <li><a href="/work.html">Selected Work</a></li>
+          <li><a href="/work.html">Approach &amp; Examples</a></li>
           <li><a href="/insights.html">Insights</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html">Contact</a></li>
@@ -85,7 +86,10 @@
 <script>
 (function(){
   var b=document.querySelector('.menu-btn'), n=document.getElementById('site-nav');
-  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});}
+  function closeNav(){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
+    n.addEventListener('click',function(e){if(e.target.closest('a'))closeNav();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){closeNav();b.focus();}});}
   function ev(name,params){try{if(window.gtag)gtag('event',name,params||{});}catch(e){}}
   window.a94event=ev;
   document.addEventListener('click',function(e){var a=e.target.closest('[data-ga]');if(a)ev(a.getAttribute('data-ga'),{label:a.getAttribute('data-ga-label')||a.textContent.trim().slice(0,60)});});

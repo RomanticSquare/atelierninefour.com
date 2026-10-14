@@ -29,6 +29,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="a94-site.css">
 </head>
 <body>
@@ -38,8 +39,8 @@
     <a class="brand" href="index.html" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Selected Work</a><a href="insights.html">Insights</a><a href="about.html">About</a>
-      <a class="btn" href="contact.html" data-ga="booking_click" data-ga-label="header">Request a fit call</a>
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Examples</a><a href="insights.html">Insights</a><a href="about.html">About</a>
+      <a class="btn" href="contact.html" data-ga="fit_call_cta_click" data-ga-label="header">Request a fit call</a>
     </nav>
   </div>
 </header>
@@ -64,46 +65,48 @@
       <p>Prefer email? Write to <a href="mailto:jenny@atelierninefour.com">jenny@atelierninefour.com</a>.</p>
     </div>
     <form class="inquiry" id="inquiry" novalidate>
+      <div class="field"><label for="f-interest">What would you like to discuss?</label>
+        <select id="f-interest" name="interest"><option value="general">A fit call: not sure yet</option><option value="diagnostic">Operational Clarity Diagnostic</option><option value="build">Operating System Build</option><option value="sprint">AI Adoption Sprint</option><option value="fractional">Fractional operations support</option><option value="workshop">A team workshop</option></select></div>
       <div class="row2">
-        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required aria-describedby="e-name"><span class="field-err" id="e-name"></span></div>
+        <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="field-err" id="e-email"></span></div>
       </div>
+      <div class="field"><label for="f-msg">What's happening? <span class="hint">A few sentences is plenty</span></label><textarea id="f-msg" name="message" placeholder="What's not working, and what would better look like?" required aria-describedby="e-message"></textarea><span class="field-err" id="e-message"></span></div>
       <div class="row2">
-        <div class="field"><label for="f-org">Organization</label><input id="f-org" name="org" autocomplete="organization"></div>
-        <div class="field"><label for="f-size">Team size</label>
+        <div class="field"><label for="f-org">Organization <span class="hint">optional</span></label><input id="f-org" name="org" autocomplete="organization"></div>
+        <div class="field"><label for="f-size">Team size <span class="hint">optional</span></label>
           <select id="f-size" name="size"><option value="">Choose one</option><option>Under 10</option><option>10 to 25</option><option>26 to 50</option><option>51 to 100</option><option>Over 100</option></select></div>
       </div>
-      <fieldset class="field"><legend>What's getting in the way? <span class="hint">Choose any</span></legend>
-        <div class="chips">
-          <label><input type="checkbox" name="issue" value="Decisions stall">Decisions stall</label>
-          <label><input type="checkbox" name="issue" value="Too many meetings">Too many meetings</label>
-          <label><input type="checkbox" name="issue" value="Reporting nobody trusts">Reporting nobody trusts</label>
-          <label><input type="checkbox" name="issue" value="Tools or AI not adopted">Tools or AI not adopted</label>
-          <label><input type="checkbox" name="issue" value="Something else">Something else</label>
-        </div>
-      </fieldset>
-      <div class="field"><label for="f-timing">Timing</label>
+      <div class="field"><label for="f-timing">Timing <span class="hint">optional</span></label>
         <select id="f-timing" name="timing"><option value="">Choose one</option><option>As soon as possible</option><option>In the next 1 to 3 months</option><option>Just exploring</option></select></div>
-      <div class="field"><label for="f-msg">A few sentences on the situation</label><textarea id="f-msg" name="message" placeholder="What's happening, and what would better look like?"></textarea></div>
-      <div><button class="btn" type="submit">Send inquiry</button></div>
-      <p class="form-note">Sending opens your email app with your answers filled in. Nothing is stored on this site.</p>
+      <p class="form-note">This opens a pre-filled email in your email app. Press send there to reach me. Nothing is stored on this site.</p>
+      <div><button class="btn" type="submit">Prepare email inquiry</button></div>
       <p class="form-status" id="f-status" role="status" aria-live="polite"></p>
+      <div id="f-fallback" hidden class="field"><label for="f-copy">If no email app opened, copy this and send it to <strong style="user-select:all">jenny@atelierninefour.com</strong></label><textarea id="f-copy" readonly></textarea><div><button class="btn ghost" type="button" id="f-copybtn">Copy message</button></div></div>
     </form>
   </div>
 </section>
 <script>
 (function(){
-  var f=document.getElementById('inquiry'), s=document.getElementById('f-status');
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var name=f.name.value.trim(), email=f.email.value.trim();
-    if(!name||!email||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){s.style.color='#A34A16';s.textContent='Please add your name and a valid email.';return;}
-    var issues=[].slice.call(f.querySelectorAll('input[name=issue]:checked')).map(function(i){return i.value;}).join(', ');
-    var body='Name: '+name+'\nEmail: '+email+'\nOrganization: '+f.org.value+'\nTeam size: '+f.size.value+'\nWhat is getting in the way: '+issues+'\nTiming: '+f.timing.value+'\n\n'+f.message.value;
-    if(window.a94event) a94event('inquiry_submit',{team_size:f.size.value||'unspecified'});
-    window.location.href='mailto:jenny@atelierninefour.com?subject='+encodeURIComponent('Fit call request: '+(f.org.value||name))+'&body='+encodeURIComponent(body);
-    s.style.color='';s.textContent='Your email app should open now. If it doesn\u2019t, write to jenny@atelierninefour.com.';
+  var f=document.getElementById('inquiry'), s=document.getElementById('f-status'), el=function(n){return f.elements.namedItem(n);};
+  try{var q=new URLSearchParams(location.search).get('interest'); if(q&&el('interest').querySelector('option[value="'+q+'"]')) el('interest').value=q;}catch(e){}
+  var started=false; f.addEventListener('input',function(){if(!started){started=true; if(window.a94event)a94event('inquiry_start',{interest:el('interest').value});}});
+  function setErr(n,msg){var i=el(n), e=document.getElementById('e-'+n); i.setAttribute('aria-invalid',msg?'true':'false'); e.textContent=msg||'';}
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var name=el('name').value.trim(), email=el('email').value.trim(), msg=el('message').value.trim(), bad=[];
+    setErr('name',name?'':'Add your name.'); if(!name)bad.push('name');
+    var okEmail=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email); setErr('email',okEmail?'':'Add an email address like name@company.com.'); if(!okEmail)bad.push('email');
+    setErr('message',msg?'':'Add a sentence or two about the situation.'); if(!msg)bad.push('message');
+    if(bad.length){s.className='form-status err'; s.textContent='Please fix the highlighted fields.'; el(bad[0]).focus(); return;}
+    var interest=el('interest').options[el('interest').selectedIndex].text;
+    var body='Interested in: '+interest+'\nName: '+name+'\nEmail: '+email+'\nOrganization: '+el('org').value+'\nTeam size: '+el('size').value+'\nTiming: '+el('timing').value+'\n\n'+msg;
+    if(window.a94event) a94event('inquiry_email_draft_attempt',{interest:el('interest').value,team_size:el('size').value||'unspecified'});
+    document.getElementById('f-copy').value='To: jenny@atelierninefour.com\nSubject: Fit call request\n\n'+body; document.getElementById('f-fallback').hidden=false;
+    s.className='form-status'; s.textContent='Your email app should open with the message ready. Press send there to reach me.';
+    window.location.href='mailto:jenny@atelierninefour.com?subject='+encodeURIComponent('Fit call request: '+interest)+'&body='+encodeURIComponent(body);
   });
+  document.getElementById('f-copybtn').addEventListener('click',function(){var t=document.getElementById('f-copy'); try{navigator.clipboard.writeText(t.value).then(function(){s.textContent='Copied. Paste it into an email to jenny@atelierninefour.com.';},function(){t.select();});}catch(e){t.select();}});
 })();
 </script>
 </main>
@@ -118,7 +121,7 @@
         <h4>Studio</h4>
         <ul>
           <li><a href="services.html">Services</a></li>
-          <li><a href="work.html">Selected Work</a></li>
+          <li><a href="work.html">Approach &amp; Examples</a></li>
           <li><a href="insights.html">Insights</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -142,7 +145,10 @@
 <script>
 (function(){
   var b=document.querySelector('.menu-btn'), n=document.getElementById('site-nav');
-  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});}
+  function closeNav(){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
+    n.addEventListener('click',function(e){if(e.target.closest('a'))closeNav();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){closeNav();b.focus();}});}
   function ev(name,params){try{if(window.gtag)gtag('event',name,params||{});}catch(e){}}
   window.a94event=ev;
   document.addEventListener('click',function(e){var a=e.target.closest('[data-ga]');if(a)ev(a.getAttribute('data-ga'),{label:a.getAttribute('data-ga-label')||a.textContent.trim().slice(0,60)});});
