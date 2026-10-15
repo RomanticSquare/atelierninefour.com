@@ -13,7 +13,7 @@ for p in sorted(root.glob('*.html')):
  Attributes().feed(p.read_text())
  s=BeautifulSoup(p.read_text(),'html.parser');title=s.title.get_text();titles.append(title)
  row={'page':p.name,'title':title,'bytes':p.stat().st_size,'h1_count':len(s.select('h1')),'canonical':[a.get('href') for a in s.select('link[rel=canonical]')],'robots':[a.get('content') for a in s.select('meta[name=robots]')],'description':[a.get('content') for a in s.select('meta[name=description]')]};pages.append(row)
- if s.select('link[href$="a94-site.css"]'):
+ if s.select('link[href*="a94-site.css"]'):
   assert len(s.select('h1'))==1,p
   assert len(row['canonical'])==1,p
   assert s.html.get('lang')=='en',p
