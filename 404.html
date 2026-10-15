@@ -8,7 +8,12 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-87QVKBQM8X');
+  gtag('config', 'G-87QVKBQM8X', {
+    page_location: location.origin + location.pathname,
+    page_referrer: document.referrer.split('?')[0].split('#')[0],
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  });
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -37,25 +42,25 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="/index.html" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
+    <a class="brand" href="/" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="/index.html">Home</a><a href="/services.html">Services</a><a href="/work.html">Examples</a><a href="/insights.html">Insights</a><a href="/about.html">About</a>
+      <a href="/">Home</a><a href="/services.html">Services</a><a href="/work.html">Examples</a><a href="/insights.html">Insights</a><a href="/about.html">About</a>
       <a class="btn" href="/contact.html" data-ga="fit_call_cta_click" data-ga-label="header">Request a fit call</a>
     </nav>
   </div>
 </header>
-<main id="main">
+<main id="main" tabindex="-1">
 <section class="hero short">
   <div class="wrap"><p class="eyebrow">Page not found</p><h1>That page has moved or no longer exists.</h1>
-  <div class="actions"><a class="btn" href="/index.html">Go to the homepage</a><a class="btn ghost" href="/services.html">See services</a></div></div>
+  <div class="actions"><a class="btn" href="/">Go to the homepage</a><a class="btn ghost" href="/services.html">See services</a></div></div>
 </section>
 </main>
 <footer class="site-foot">
   <div class="wrap">
     <div class="cols">
       <div class="about">
-        <a class="brand" href="/index.html"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
+        <a class="brand" href="/"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
         <p style="margin-top:14px;max-width:44ch">Operational clarity for growing teams: how decisions get made, how meetings earn their time, and how the work actually gets done.</p>
       </div>
       <div>
@@ -83,19 +88,6 @@
     <div class="base"><span>© 2026 Atelier Nine Four · <em style="font-family:var(--display);font-size:1.05rem;color:var(--gold)">Multifaceted by Design</em></span><span>Founded by Jenny François</span></div>
   </div>
 </footer>
-<script>
-(function(){
-  var b=document.querySelector('.menu-btn'), n=document.getElementById('site-nav');
-  function closeNav(){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
-  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
-    n.addEventListener('click',function(e){if(e.target.closest('a'))closeNav();});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){closeNav();b.focus();}});}
-  function ev(name,params){try{if(window.gtag)gtag('event',name,params||{});}catch(e){}}
-  window.a94event=ev;
-  document.addEventListener('click',function(e){var a=e.target.closest('[data-ga]');if(a)ev(a.getAttribute('data-ga'),{label:a.getAttribute('data-ga-label')||a.textContent.trim().slice(0,60)});});
-  document.querySelectorAll('details.case').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)ev('case_study_view',{case_id:d.id});});});
-  var pv=document.body.getAttribute('data-page-event');if(pv)ev(pv);
-})();
-</script>
+<script src="/a94-site.js" defer></script>
 </body>
 </html>

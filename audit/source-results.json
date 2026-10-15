@@ -1,0 +1,246 @@
+{
+  "status": "PASS",
+  "root_html_pages": 18,
+  "sitemap_entries": 12,
+  "broken_local_references": [],
+  "pages": [
+    {
+      "page": "404.html",
+      "title": "Page not found | Atelier Nine Four",
+      "bytes": 4646,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/404.html"
+      ],
+      "robots": [
+        "noindex"
+      ],
+      "description": [
+        "Page not found."
+      ]
+    },
+    {
+      "page": "about.html",
+      "title": "About Jenny Fran\u00e7ois | Atelier Nine Four",
+      "bytes": 9041,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/about.html"
+      ],
+      "robots": [],
+      "description": [
+        "Jenny Fran\u00e7ois founded Atelier Nine Four after 15+ years running day-to-day operations for senior sales and marketing leaders. Graduate study in Organizational Leadership."
+      ]
+    },
+    {
+      "page": "coming.html",
+      "title": "Moved \u00b7 Atelier Nine Four",
+      "bytes": 636,
+      "h1_count": 0,
+      "canonical": [
+        "https://atelierninefour.com/learning.html"
+      ],
+      "robots": [
+        "noindex"
+      ],
+      "description": []
+    },
+    {
+      "page": "contact.html",
+      "title": "Contact | Atelier Nine Four",
+      "bytes": 8588,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/contact.html"
+      ],
+      "robots": [],
+      "description": [
+        "Request a free 30-minute fit call with Atelier Nine Four about how your team makes decisions, runs meetings and adopts new tools."
+      ]
+    },
+    {
+      "page": "decision-record.html",
+      "title": "A meeting is not a decision record | Atelier Nine Four",
+      "bytes": 7823,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/decision-record.html"
+      ],
+      "robots": [],
+      "description": [
+        "A practical guide to recording decisions, owners, next steps and revisit conditions so small teams can move work forward."
+      ]
+    },
+    {
+      "page": "index.html",
+      "title": "Atelier Nine Four | Strategy & Operations for Growing Teams",
+      "bytes": 12499,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/"
+      ],
+      "robots": [],
+      "description": [
+        "Atelier Nine Four helps founders and operators of 10 to 100 person teams fix how decisions get made, how meetings run, how reporting gets trusted, and how new tools get adopted."
+      ]
+    },
+    {
+      "page": "insights.html",
+      "title": "Insights | Beyond the Calendar \u00b7 Atelier Nine Four",
+      "bytes": 7338,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/insights.html"
+      ],
+      "robots": [],
+      "description": [
+        "Beyond the Calendar: a weekly series on operating cadence, trustworthy KPIs, decision logs, AI adoption and how organizations actually run."
+      ]
+    },
+    {
+      "page": "learning.html",
+      "title": "Digital Learning | Atelier Nine Four",
+      "bytes": 7262,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/learning.html"
+      ],
+      "robots": [],
+      "description": [
+        "Self-paced AI marketing courses from Atelier Nine Four, in testing: event marketing, brand voice, AI search visibility and a marketing quick start."
+      ]
+    },
+    {
+      "page": "license.html",
+      "title": "License | Atelier Nine Four",
+      "bytes": 6811,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/license.html"
+      ],
+      "robots": [],
+      "description": [
+        "How Atelier Nine Four website content, client deliverables and templates may be used."
+      ]
+    },
+    {
+      "page": "privacy.html",
+      "title": "Privacy | Atelier Nine Four",
+      "bytes": 6131,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/privacy.html"
+      ],
+      "robots": [],
+      "description": [
+        "How Atelier Nine Four handles analytics and inquiry information, including the contact form."
+      ]
+    },
+    {
+      "page": "reviews.html",
+      "title": "Moved \u00b7 Atelier Nine Four",
+      "bytes": 627,
+      "h1_count": 0,
+      "canonical": [
+        "https://atelierninefour.com/work.html"
+      ],
+      "robots": [
+        "noindex"
+      ],
+      "description": []
+    },
+    {
+      "page": "sample-diagnostic.html",
+      "title": "Sample Operational Clarity Diagnostic | Atelier Nine Four",
+      "bytes": 9256,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/sample-diagnostic.html"
+      ],
+      "robots": [],
+      "description": [
+        "An illustrative findings memo, process map and scorecard showing what an Atelier Nine Four diagnostic can look like."
+      ]
+    },
+    {
+      "page": "services.html",
+      "title": "Services | Atelier Nine Four Strategy & Operations",
+      "bytes": 14179,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/services.html"
+      ],
+      "robots": [],
+      "description": [
+        "Fixed-scope operations work for growing teams: the Operational Clarity Diagnostic, Operating System Build, AI Adoption Sprint and fractional operations support."
+      ]
+    },
+    {
+      "page": "shop.html",
+      "title": "Moved \u00b7 Atelier Nine Four",
+      "bytes": 636,
+      "h1_count": 0,
+      "canonical": [
+        "https://atelierninefour.com/learning.html"
+      ],
+      "robots": [
+        "noindex"
+      ],
+      "description": []
+    },
+    {
+      "page": "story.html",
+      "title": "Moved \u00b7 Atelier Nine Four",
+      "bytes": 616,
+      "h1_count": 0,
+      "canonical": [
+        "https://atelierninefour.com/about.html"
+      ],
+      "robots": [
+        "noindex"
+      ],
+      "description": []
+    },
+    {
+      "page": "terms.html",
+      "title": "Terms of Use | Atelier Nine Four",
+      "bytes": 7433,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/terms.html"
+      ],
+      "robots": [],
+      "description": [
+        "Terms governing use of the Atelier Nine Four website."
+      ]
+    },
+    {
+      "page": "work.html",
+      "title": "Approach & Examples | Atelier Nine Four",
+      "bytes": 12218,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/work.html"
+      ],
+      "robots": [],
+      "description": [
+        "Illustrative case studies showing how Atelier Nine Four diagnoses and designs operating systems for nonprofits, small businesses, professional services firms and agencies."
+      ]
+    },
+    {
+      "page": "workwithme.html",
+      "title": "College Blueprint retired | Atelier Nine Four",
+      "bytes": 4969,
+      "h1_count": 1,
+      "canonical": [
+        "https://atelierninefour.com/workwithme.html"
+      ],
+      "robots": [
+        "noindex"
+      ],
+      "description": [
+        "The College Blueprint degree-planning service is no longer offered."
+      ]
+    }
+  ]
+}

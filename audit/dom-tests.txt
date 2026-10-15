@@ -1,0 +1,18 @@
+✔ empty and malformed input do not send; first error receives focus (248.929892ms)
+✔ interest query is allowlisted, malicious selector input ignored (74.031611ms)
+✔ successful delivery records exactly one event, no personal event fields, duplicate guarded (36.301313ms)
+✔ server rejection retains data and never records success (18.736028ms)
+✔ rate limit retains data and never records success (18.665391ms)
+✔ server failure retains data and never records success (18.833376ms)
+✔ timeout aborts request, unlocks form, retains message (22.42769ms)
+✔ select-only interaction starts funnel once (15.952262ms)
+✔ menu closes on Escape, restores focus; outside click closes it (20.615595ms)
+✔ native validation stays enabled when enhanced APIs unavailable (21.778015ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1083.275995
