@@ -3,17 +3,17 @@
 :root{
   --navy:#0D1B2A; --navy-2:#13263A; --gold:#C9A84C; --gold-deep:#7A5718; --gold-soft:#F0E3C2;
   --cream:#F5F0E8; --paper:#FFFFFF; --ink:#0D1B2A; --ink-soft:#4A5361; --line:#E2D8C6;
-  --on-dark:#F5F0E8; --on-dark-soft:rgba(245,240,232,.74); --green:#1B6B4A;
+  --on-dark:#F5F0E8; --on-dark-soft:rgba(245,240,232,.74); --green:#1B6B4A; --ok:#1B6B4A; --bad:#A23B2A;
   --bg:var(--cream); --surface:var(--paper);
   --display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
   --body:'Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
   --wrap:1120px; --r:12px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0A1521; --surface:#112033; --ink:#F2ECE1; --ink-soft:#B4BCC8; --line:#24384F;
+  --bg:#0A1521; --surface:#112033; --ink:#F2ECE1; --ink-soft:#B4BCC8; --line:#24384F; --ok:#7DDCAE; --bad:#FF9B8A;
   --gold-deep:#E1C273; --gold-soft:#2E2817; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0A1521; --surface:#112033; --ink:#F2ECE1; --ink-soft:#B4BCC8; --line:#24384F;
+  --bg:#0A1521; --surface:#112033; --ink:#F2ECE1; --ink-soft:#B4BCC8; --line:#24384F; --ok:#7DDCAE; --bad:#FF9B8A;
   --gold-deep:#E1C273; --gold-soft:#2E2817; color-scheme:dark}
 
 *,*::before,*::after{box-sizing:border-box}
@@ -169,11 +169,11 @@ fieldset{border:0;padding:0;margin:0}
 .chips label{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:8px 14px;font-weight:500;font-size:.88rem;cursor:pointer;background:var(--bg)}
 .chips input{accent-color:var(--gold);width:16px;height:16px;margin:0}
 .form-note{font-size:.85rem;color:var(--ink-soft)}
-.form-status{font-weight:600;color:var(--green)}
-.form-status.err,.field-err{color:#A23B2A}
+.form-status{font-weight:600;color:var(--ok)}
+.form-status.err,.field-err{color:var(--bad)}
 .field-err{font-size:.82rem;font-weight:600;min-height:0}
 .field-err:empty{display:none}
-.field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:#A23B2A}
+.field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:var(--bad)}
 #f-copy{min-height:150px;font-size:.85rem}
 
 /* CTA band */
