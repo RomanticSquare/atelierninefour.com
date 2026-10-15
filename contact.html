@@ -7,7 +7,12 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-87QVKBQM8X');
+  gtag('config', 'G-87QVKBQM8X', {
+    page_location: location.origin + location.pathname,
+    page_referrer: document.referrer.split('?')[0].split('#')[0],
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  });
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -36,15 +41,15 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
+    <a class="brand" href="/" aria-label="Atelier Nine Four home"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Examples</a><a href="insights.html">Insights</a><a href="about.html">About</a>
-      <a class="btn" href="contact.html" data-ga="fit_call_cta_click" data-ga-label="header">Request a fit call</a>
+      <a href="/">Home</a><a href="services.html">Services</a><a href="work.html">Examples</a><a href="insights.html">Insights</a><a href="about.html">About</a>
+      <a class="btn" href="contact.html" aria-current="page" data-ga="fit_call_cta_click" data-ga-label="header">Request a fit call</a>
     </nav>
   </div>
 </header>
-<main id="main">
+<main id="main" tabindex="-1">
 <section class="hero short">
   <div class="wrap">
     <p class="eyebrow">Contact</p>
@@ -64,16 +69,16 @@
       <p class="notice" style="margin-top:12px">Please don't include confidential, financial or employee information in this form. We'll agree on how to handle anything sensitive once we're working together.</p>
       <p>Prefer email? Write to <a href="mailto:jenny@atelierninefour.com">jenny@atelierninefour.com</a>.</p>
     </div>
-    <form class="inquiry" id="inquiry" action="https://formspree.io/f/xjygpgeq" method="POST" novalidate>
+    <form class="inquiry" id="inquiry" action="https://formspree.io/f/xjygpgeq" method="POST" aria-describedby="form-privacy">
       <div class="field"><label for="f-interest">What would you like to discuss?</label>
         <select id="f-interest" name="interest"><option value="general">A fit call: not sure yet</option><option value="diagnostic">Operational Clarity Diagnostic</option><option value="build">Operating System Build</option><option value="sprint">AI Adoption Sprint</option><option value="fractional">Fractional operations support</option><option value="workshop">A team workshop</option></select></div>
       <div class="row2">
-        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required aria-describedby="e-name"><span class="field-err" id="e-name"></span></div>
-        <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="field-err" id="e-email"></span></div>
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" maxlength="160" autocomplete="name" required aria-describedby="e-name"><span class="field-err" id="e-name"></span></div>
+        <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" maxlength="254" type="email" autocomplete="email" required aria-describedby="e-email"><span class="field-err" id="e-email"></span></div>
       </div>
-      <div class="field"><label for="f-msg">What's happening? <span class="hint">A few sentences is plenty</span></label><textarea id="f-msg" name="message" placeholder="What's not working, and what would better look like?" required aria-describedby="e-message"></textarea><span class="field-err" id="e-message"></span></div>
+      <div class="field"><label for="f-msg">What's happening? <span class="hint">A few sentences is plenty</span></label><textarea id="f-msg" name="message" maxlength="10000" placeholder="What's not working, and what would better look like?" required aria-describedby="e-message"></textarea><span class="field-err" id="e-message"></span></div>
       <div class="row2">
-        <div class="field"><label for="f-org">Organization <span class="hint">optional</span></label><input id="f-org" name="organization" autocomplete="organization"></div>
+        <div class="field"><label for="f-org">Organization <span class="hint">optional</span></label><input id="f-org" name="organization" maxlength="200" autocomplete="organization"></div>
         <div class="field"><label for="f-size">Team size <span class="hint">optional</span></label>
           <select id="f-size" name="team_size"><option value="">Choose one</option><option>Under 10</option><option>10 to 25</option><option>26 to 50</option><option>51 to 100</option><option>Over 100</option></select></div>
       </div>
@@ -81,44 +86,19 @@
         <select id="f-timing" name="timing"><option value="">Choose one</option><option>As soon as possible</option><option>In the next 1 to 3 months</option><option>Just exploring</option></select></div>
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <input type="hidden" name="_subject" id="f-subject" value="New A94 request">
+      <p class="form-note" id="form-privacy">Your details are processed by Formspree to respond to this request. <a href="privacy.html">Read the privacy notice</a>. Name, email and message are required.</p>
       <div><button class="btn" type="submit" id="f-send">Send request</button></div>
       <p class="form-status" id="f-status" role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>
-<script>
-(function(){
-  var f=document.getElementById('inquiry'), s=document.getElementById('f-status'), btn=document.getElementById('f-send'), el=function(n){return f.elements.namedItem(n);};
-  try{var q=new URLSearchParams(location.search).get('interest'); if(q&&el('interest').querySelector('option[value="'+q+'"]')) el('interest').value=q;}catch(e){}
-  var started=false; f.addEventListener('input',function(){if(!started){started=true; if(window.a94event)a94event('inquiry_start',{interest:el('interest').value});}});
-  function setErr(n,msg){var i=el(n), e=document.getElementById('e-'+n); i.setAttribute('aria-invalid',msg?'true':'false'); e.textContent=msg||'';}
-  f.addEventListener('submit',function(ev){
-    ev.preventDefault();
-    var name=el('name').value.trim(), email=el('email').value.trim(), msg=el('message').value.trim(), bad=[];
-    setErr('name',name?'':'Add your name.'); if(!name)bad.push('name');
-    var okEmail=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email); setErr('email',okEmail?'':'Add an email address like name@company.com.'); if(!okEmail)bad.push('email');
-    setErr('message',msg?'':'Add a sentence or two about the situation.'); if(!msg)bad.push('message');
-    if(bad.length){s.className='form-status err'; s.textContent='Please fix the highlighted fields.'; el(bad[0]).focus(); return;}
-    var label=el('interest').options[el('interest').selectedIndex].text;
-    document.getElementById('f-subject').value='New A94 request: '+label+' from '+name;
-    var data=new FormData(f); data.set('interest',label);
-    btn.disabled=true; s.className='form-status'; s.textContent='Sending...';
-    fetch(f.action,{method:'POST',body:data,headers:{'Accept':'application/json'}}).then(function(r){
-      if(!r.ok) throw new Error('bad');
-      if(window.a94event) a94event('inquiry_submit',{interest:el('interest').value,team_size:el('team_size').value||'unspecified'});
-      f.reset(); s.className='form-status ok'; s.textContent="Thanks, your request was received. I'll reply within two business days.";
-    }).catch(function(){
-      s.className='form-status err'; s.innerHTML='That did not send. Please try again, or email <strong style="user-select:all">jenny@atelierninefour.com</strong>.';
-    }).finally(function(){btn.disabled=false;});
-  });
-})();
-</script>
+<script src="/a94-contact.js" defer></script>
 </main>
 <footer class="site-foot">
   <div class="wrap">
     <div class="cols">
       <div class="about">
-        <a class="brand" href="index.html"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
+        <a class="brand" href="/"><b>Atelier Nine Four</b><span>Strategy &amp; Operations</span></a>
         <p style="margin-top:14px;max-width:44ch">Operational clarity for growing teams: how decisions get made, how meetings earn their time, and how the work actually gets done.</p>
       </div>
       <div>
@@ -146,19 +126,6 @@
     <div class="base"><span>© 2026 Atelier Nine Four · <em style="font-family:var(--display);font-size:1.05rem;color:var(--gold)">Multifaceted by Design</em></span><span>Founded by Jenny François</span></div>
   </div>
 </footer>
-<script>
-(function(){
-  var b=document.querySelector('.menu-btn'), n=document.getElementById('site-nav');
-  function closeNav(){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
-  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
-    n.addEventListener('click',function(e){if(e.target.closest('a'))closeNav();});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){closeNav();b.focus();}});}
-  function ev(name,params){try{if(window.gtag)gtag('event',name,params||{});}catch(e){}}
-  window.a94event=ev;
-  document.addEventListener('click',function(e){var a=e.target.closest('[data-ga]');if(a)ev(a.getAttribute('data-ga'),{label:a.getAttribute('data-ga-label')||a.textContent.trim().slice(0,60)});});
-  document.querySelectorAll('details.case').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)ev('case_study_view',{case_id:d.id});});});
-  var pv=document.body.getAttribute('data-page-event');if(pv)ev(pv);
-})();
-</script>
+<script src="/a94-site.js" defer></script>
 </body>
 </html>

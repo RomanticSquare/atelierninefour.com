@@ -213,3 +213,37 @@ fieldset{border:0;padding:0;margin:0}
 .table-block{display:grid;gap:12px;min-width:0}
 .table-title{font-size:1.25rem;margin:0}
 .card > .tag{justify-self:start}
+
+/* Reliability and accessibility repairs, preserving the studio palette. */
+html{scroll-padding-top:88px}
+[id],input,select,textarea,summary{scroll-margin-top:88px}
+main:focus{outline:none}
+.prose,.field,.inquiry{min-width:0}
+p,a,li,dd{overflow-wrap:anywhere}
+.menu-btn{min-height:44px;min-width:44px}
+.btn:disabled{opacity:.65;cursor:wait}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--gold-deep);outline-offset:2px}
+.table-scroll:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+@media (max-width:940px){
+  /* With blocked/failed scripts, links stay visible and usable. */
+  .site-head .wrap{flex-wrap:wrap}
+  .menu-btn{display:none}
+  .nav{display:flex;position:static;width:100%;max-height:none}
+  .nav-ready .site-head .wrap{flex-wrap:nowrap}
+  .nav-ready .menu-btn{display:inline-block}
+  .nav-ready .nav{display:none;position:absolute;max-height:calc(100dvh - 68px);overflow-y:auto}
+  .nav-ready .nav.open{display:flex}
+}
+@media (max-width:380px){.brand b{font-size:1.15rem}.brand span{font-size:.6rem;letter-spacing:.18em}.btn{max-width:100%;white-space:normal}}
+.nav .btn[aria-current="page"]{color:var(--navy)}
+:focus-visible{outline-color:var(--gold-deep)}
+.site-head :focus-visible,.site-foot :focus-visible,.hero :focus-visible,.dark :focus-visible{outline-color:var(--gold)}
+.field input,.field select,.field textarea{border-color:#8B8171}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .field input,:root:not([data-theme="light"]) .field select,:root:not([data-theme="light"]) .field textarea{border-color:#8190A3}}
+:root[data-theme="dark"] .field input,:root[data-theme="dark"] .field select,:root[data-theme="dark"] .field textarea{border-color:#8190A3}
+.field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:var(--bad)}
+@media (max-width:940px){
+  .site-head{position:static}
+  .nav-ready .site-head{position:sticky}
+  .nav-ready .nav{max-height:calc(100vh - 68px);max-height:calc(100dvh - 68px)}
+}
