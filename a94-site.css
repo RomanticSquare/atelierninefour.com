@@ -210,3 +210,6 @@ fieldset{border:0;padding:0;margin:0}
 .sample-table th{background:var(--gold-soft);color:var(--ink)}
 .sample-table td{color:var(--ink-soft)}
 @media print{.site-head,.site-foot,.cta,.menu-btn{display:none}section{padding-block:20px}.hero{background:white;color:#0D1B2A}.hero h1,.hero .lede{color:#0D1B2A}.table-scroll{overflow:visible}.sample-table{min-width:0;font-size:11px}.card{break-inside:avoid}.article-body{max-width:none}}
+.table-block{display:grid;gap:12px;min-width:0}
+.table-title{font-size:1.25rem;margin:0}
+.card > .tag{justify-self:start}
